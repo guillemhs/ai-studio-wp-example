@@ -1,0 +1,86 @@
+/*
+Theme Name: Agile611
+Theme URI: https://agile611.com
+Author: Agile611
+Description: A modern Block Theme (FSE) for Agile611 focusing on Human + Efficient values.
+Version: 1.0.1
+Requires at least: 6.5
+Tested up to: 6.8
+Requires PHP: 7.4
+Tags: block-theme, full-site-editing, custom-colors, custom-menu, three-columns, two-columns
+*/
+
+:root {
+  /* Brand Palette Maps to theme.json slugs */
+  --agile-bg: #F5F5F5;
+  --agile-text: #242424;
+  --agile-primary: #057EB5;
+  --agile-vibrant: #00B2E9;
+  --agile-green: #499497;
+  --agile-turq: #4CB8C9;
+  --agile-deep: #01003f;
+  
+  /* Font Families */
+  --font-heading: 'Work Sans', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--agile-bg);
+  color: var(--agile-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utilities for Block Editor */
+
+.wp-block-button__link {
+  transition: all 0.2s ease-in-out;
+}
+
+.wp-block-button__link:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Card Style Pattern helper */
+.agile-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid transparent;
+  
+  /* Enhanced Animation Properties */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy engaging feel */
+  position: relative;
+  z-index: 1;
+  height: 100%; /* Ensures consistent height in grid */
+  display: flex;
+  flex-direction: column;
+}
+
+.agile-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-top-color: var(--agile-vibrant);
+  z-index: 10;
+}
+
+/* Inner Element Animations - Contextual Hover */
+.agile-card h3 {
+  transition: color 0.3s ease;
+}
+
+.agile-card:hover h3 {
+  color: var(--agile-primary) !important; /* Force color change to brand blue on card hover */
+}
+
+.agile-card p {
+  transition: opacity 0.3s ease;
+}
+
+.agile-card:hover p {
+  opacity: 0.9;
+  color: #000;
+}
