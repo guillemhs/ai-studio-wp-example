@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './Button';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Terminal } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -56,35 +56,85 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="hidden lg:block relative">
-             {/* Abstract Geometric Visualization of "Structure + Humanity" */}
-             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-agile-primary to-agile-deep border border-white/10 aspect-square flex items-center justify-center p-8">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
-                
-                {/* Floating cards simulation */}
-                <div className="absolute top-10 right-10 w-48 h-32 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4 shadow-lg transform rotate-6 animate-[bounce_6s_infinite]">
-                    <div className="h-2 w-1/3 bg-agile-vibrant rounded mb-3"></div>
-                    <div className="h-2 w-3/4 bg-white/30 rounded mb-2"></div>
-                    <div className="h-2 w-1/2 bg-white/30 rounded"></div>
+          {/* Right Column: Tech Training Terminal */}
+          <div className="hidden lg:block relative w-full max-w-lg ml-auto perspective-1000">
+            {/* Card Container with glassmorphism */}
+            <div className="relative rounded-xl overflow-hidden bg-[#0a192f]/80 border border-agile-primary/30 shadow-2xl backdrop-blur-md transform transition-transform hover:scale-[1.01] duration-500">
+              
+              {/* Terminal Header */}
+              <div className="bg-[#020c1b] px-4 py-3 border-b border-white/5 flex items-center justify-between">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                 </div>
-                
-                <div className="absolute bottom-20 left-10 w-56 h-40 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-4 shadow-lg transform -rotate-3">
-                    <div className="flex items-center space-x-3 mb-4">
-                         <div className="w-8 h-8 rounded-full bg-agile-turq"></div>
-                         <div className="h-2 w-20 bg-white/40 rounded"></div>
+                <div className="text-[10px] font-mono text-gray-400 flex items-center">
+                  <Terminal size={10} className="mr-1" />
+                  user@agile611:~/training-schedule
+                </div>
+              </div>
+
+              {/* Terminal Content */}
+              <div className="p-6">
+                <div className="mb-6 flex items-center text-agile-vibrant font-mono text-sm">
+                  <span className="mr-2 text-agile-green">$</span>
+                  <span className="typing-effect">list --upcoming --open</span>
+                  <span className="ml-1 w-2 h-4 bg-agile-vibrant animate-pulse"></span>
+                </div>
+
+                <div className="space-y-3">
+                    {/* Item 1 */}
+                    <div className="flex items-center group cursor-pointer p-3 rounded-lg hover:bg-white/5 transition-all border border-transparent hover:border-agile-primary/20">
+                      <div className="w-12 h-12 flex-shrink-0 rounded bg-agile-primary/10 border border-agile-primary/30 flex flex-col items-center justify-center text-agile-primary mr-4 group-hover:bg-agile-primary group-hover:text-white transition-all">
+                          <span className="text-[10px] font-bold uppercase tracking-wider">Mar</span>
+                          <span className="text-lg font-bold leading-none">15</span>
+                      </div>
+                      <div className="flex-grow">
+                          <h4 className="text-white font-bold text-sm group-hover:text-agile-vibrant transition-colors">Scrum Master Certified</h4>
+                          <p className="text-agile-turq text-xs font-mono mt-1">Online • 18:00 CET</p>
+                      </div>
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0">
+                          <ArrowRight size={16} className="text-white" />
+                      </div>
                     </div>
-                    <div className="space-y-2">
-                        <div className="h-2 w-full bg-white/20 rounded"></div>
-                        <div className="h-2 w-full bg-white/20 rounded"></div>
-                        <div className="h-2 w-2/3 bg-white/20 rounded"></div>
+                    
+                    {/* Item 2 */}
+                    <div className="flex items-center group cursor-pointer p-3 rounded-lg hover:bg-white/5 transition-all border border-transparent hover:border-agile-green/20">
+                      <div className="w-12 h-12 flex-shrink-0 rounded bg-agile-green/10 border border-agile-green/30 flex flex-col items-center justify-center text-agile-green mr-4 group-hover:bg-agile-green group-hover:text-white transition-all">
+                          <span className="text-[10px] font-bold uppercase tracking-wider">Mar</span>
+                          <span className="text-lg font-bold leading-none">22</span>
+                      </div>
+                      <div className="flex-grow">
+                          <h4 className="text-white font-bold text-sm group-hover:text-agile-turq transition-colors">DevOps Fundamentals</h4>
+                          <p className="text-agile-turq text-xs font-mono mt-1">Online • 17:30 CET</p>
+                      </div>
+                       <div className="opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0">
+                          <ArrowRight size={16} className="text-white" />
+                      </div>
+                    </div>
+
+                    {/* Item 3 */}
+                    <div className="flex items-center group cursor-pointer p-3 rounded-lg hover:bg-white/5 transition-all border border-transparent hover:border-purple-500/20">
+                      <div className="w-12 h-12 flex-shrink-0 rounded bg-purple-500/10 border border-purple-500/30 flex flex-col items-center justify-center text-purple-400 mr-4 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                          <span className="text-[10px] font-bold uppercase tracking-wider">Abr</span>
+                          <span className="text-lg font-bold leading-none">05</span>
+                      </div>
+                      <div className="flex-grow">
+                          <h4 className="text-white font-bold text-sm group-hover:text-purple-300 transition-colors">SAFe 6.0 Agilist</h4>
+                          <p className="text-agile-turq text-xs font-mono mt-1">Madrid • 09:00 CET</p>
+                      </div>
+                       <div className="opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0">
+                          <ArrowRight size={16} className="text-white" />
+                      </div>
                     </div>
                 </div>
 
-                {/* Central Focus */}
-                <div className="relative z-10 text-center">
-                    <span className="block font-heading text-8xl font-bold text-white/5 tracking-widest">A611</span>
+                <div className="mt-6 pt-4 border-t border-white/5 text-center flex justify-between items-center text-[10px] text-gray-500 font-mono">
+                    <span>STATUS: ONLINE</span>
+                    <span className="hover:text-white cursor-pointer transition-colors">View all 12 courses...</span>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
 
         </div>

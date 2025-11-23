@@ -12,7 +12,11 @@ export const APP_NAME = "Agile611";
 
 export const NAV_LINKS: NavLink[] = [
   { label: 'Inicio', href: '#hero' },
-  { label: 'Servicios', href: '#services' },
+  { label: 'Cursos Técnicos', href: '#technical' },
+  { label: 'SAFe', href: '#safe' },
+  { label: 'Scrum.org', href: '#scrum' },
+  { label: 'Ciberseguridad', href: '#cybersecurity' },
+  { label: 'Inteligencia Artificial', href: '#ai' },
   { label: 'Nosotros', href: '#values' },
   { label: 'Contacto', href: '#contact' },
 ];

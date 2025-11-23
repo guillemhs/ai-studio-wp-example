@@ -33,13 +33,13 @@ const Header: React.FC = () => {
             </a>
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-8 items-center">
+          {/* Desktop Nav - Reduced spacing to fit more items */}
+          <nav className="hidden xl:flex space-x-5 items-center">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className={`text-base font-semibold transition-colors ${
+                className={`text-sm font-semibold transition-colors whitespace-nowrap ${
                   scrolled 
                     ? 'text-agile-text hover:text-agile-primary' 
                     : 'text-gray-200 hover:text-white'
@@ -53,8 +53,8 @@ const Header: React.FC = () => {
             </Button>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/* Mobile Menu Button - Visible on smaller screens now due to menu size */}
+          <div className="xl:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md ${
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-xl absolute top-full left-0 w-full border-t border-gray-100">
+        <div className="xl:hidden bg-white shadow-xl absolute top-full left-0 w-full border-t border-gray-100 max-h-[90vh] overflow-y-auto">
           <div className="px-4 pt-2 pb-6 space-y-2">
             {NAV_LINKS.map((link) => (
               <a

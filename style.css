@@ -3,36 +3,27 @@ Theme Name: Agile611
 Theme URI: https://agile611.com
 Author: Agile611
 Description: A modern Block Theme (FSE) for Agile611 focusing on Human + Efficient values.
-Version: 1.0.1
+Version: 1.0.5
 Requires at least: 6.5
-Tested up to: 6.8
+Tested up to: 6.8.3
 Requires PHP: 7.4
-Tags: block-theme, full-site-editing, custom-colors, custom-menu, three-columns, two-columns
+Tags: block-theme, full-site-editing, custom-colors, custom-menu, three-columns, two-columns, woocommerce, accessibility-ready
 */
 
-:root {
-  /* Brand Palette Maps to theme.json slugs */
-  --agile-bg: #F5F5F5;
-  --agile-text: #242424;
-  --agile-primary: #057EB5;
-  --agile-vibrant: #00B2E9;
-  --agile-green: #499497;
-  --agile-turq: #4CB8C9;
-  --agile-deep: #01003f;
-  
-  /* Font Families */
-  --font-heading: 'Work Sans', sans-serif;
-  --font-body: 'Nunito', sans-serif;
-}
+/* 
+ * GLOBAL VARIABLES
+ * Note: Colors and Spacing are generated automatically from theme.json 
+ */
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--agile-bg);
-  color: var(--agile-text);
+  background-color: var(--wp--preset--color--agile-bg);
+  color: var(--wp--preset--color--agile-text);
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Utilities for Block Editor */
+/* -------------------------------------------------------------------------- */
+/*	General Block Styles
+/* -------------------------------------------------------------------------- */
 
 .wp-block-button__link {
   transition: all 0.2s ease-in-out;
@@ -43,44 +34,113 @@ body {
   transform: translateY(-1px);
 }
 
-/* Card Style Pattern helper */
+/* -------------------------------------------------------------------------- */
+/*	Card Style Pattern (Service Cards)
+/* -------------------------------------------------------------------------- */
+
 .agile-card {
-  background: #ffffff;
+  background: var(--wp--preset--color--white);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--wp--preset--shadow--card);
   border-top: 4px solid transparent;
-  
-  /* Enhanced Animation Properties */
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy engaging feel */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   z-index: 1;
-  height: 100%; /* Ensures consistent height in grid */
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .agile-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-top-color: var(--agile-vibrant);
+  box-shadow: var(--wp--preset--shadow--card-hover);
+  border-top-color: var(--wp--preset--color--agile-vibrant);
   z-index: 10;
 }
 
-/* Inner Element Animations - Contextual Hover */
 .agile-card h3 {
   transition: color 0.3s ease;
 }
 
 .agile-card:hover h3 {
-  color: var(--agile-primary) !important; /* Force color change to brand blue on card hover */
+  color: var(--wp--preset--color--agile-primary) !important;
 }
 
-.agile-card p {
-  transition: opacity 0.3s ease;
+/* -------------------------------------------------------------------------- */
+/*	Text Slider Animation (Pure CSS)
+/* -------------------------------------------------------------------------- */
+
+.agile-text-slider {
+  display: inline-block;
+  height: 1.1em;
+  overflow: hidden;
+  vertical-align: bottom;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
 }
 
-.agile-card:hover p {
-  opacity: 0.9;
-  color: #000;
+.agile-text-slider-content {
+  display: block;
+  animation: agileSlideVertical 12s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+.agile-text-slider-item {
+  display: block;
+  height: 1.1em;
+  color: var(--wp--preset--color--agile-vibrant);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@keyframes agileSlideVertical {
+  0%, 20% { transform: translateY(0); }
+  25%, 45% { transform: translateY(-1.1em); }
+  50%, 70% { transform: translateY(-2.2em); }
+  75%, 95% { transform: translateY(-3.3em); }
+  100% { transform: translateY(0); } 
+}
+
+/* -------------------------------------------------------------------------- */
+/*	PLUGIN COMPATIBILITY
+/* -------------------------------------------------------------------------- */
+
+/* Contact Form 7 & General Inputs */
+input[type="text"], input[type="email"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
+  padding: 12px 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-family: var(--wp--preset--font-family--body);
+  width: 100%;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--wp--preset--color--agile-primary);
+  box-shadow: 0 0 0 3px rgba(5, 126, 181, 0.1);
+}
+
+/* WooCommerce Buttons Override */
+.woocommerce button.button,
+.woocommerce a.button,
+.woocommerce input.button {
+  background-color: var(--wp--preset--color--agile-primary) !important;
+  color: white !important;
+  border-radius: 4px !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  border: none !important;
+}
+
+.woocommerce button.button:hover,
+.woocommerce a.button:hover {
+  background-color: var(--wp--preset--color--agile-vibrant) !important;
+}
+
+/* Elementor Fixes */
+.elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: var(--wp--style--global--content-size);
 }
