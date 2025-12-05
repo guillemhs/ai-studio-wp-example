@@ -1,68 +1,64 @@
 <?php
 /**
- * Main index template
- * Fallback for all queries unless a more specific template exists.
- *
+ * Main index template (standalone-safe)
  * @package AI_Studio_WP_Example
  */
-get_header();
-?>
+?><!doctype html>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo('charset'); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
 <main id="primary" class="site-main" role="main">
-  <!-- Hero / Intro -->
   <section class="site-hero alignwide">
     <div class="site-hero__inner">
-      <h1 class="site-hero__title"><?php echo esc_html( get_bloginfo('name') ); ?></h1>
-      <?php
-      $description = get_bloginfo( 'description', 'display' );
-      if ( $description ) :
-      ?>
-        <p class="site-hero__tagline"><?php echo esc_html( $description ); ?></p>
+      <h1 class="site-hero__title"><?php echo esc_html(get_bloginfo('name')); ?></h1>
+      <?php $description = get_bloginfo('description', 'display'); ?>
+      <?php if ($description) : ?>
+        <p class="site-hero__tagline"><?php echo esc_html($description); ?></p>
       <?php endif; ?>
     </div>
   </section>
 
-  <!-- Content Loop -->
   <section class="content-list alignwide">
-    <?php if ( have_posts() ) : ?>
+    <?php if (have_posts()) : ?>
 
-      <?php if ( is_home() && ! is_front_page() ) : ?>
+      <?php if (is_home() && !is_front_page()) : ?>
         <header class="page-header">
           <h2 class="page-title screen-reader-text"><?php single_post_title(); ?></h2>
         </header>
       <?php endif; ?>
 
-      <?php
-      while ( have_posts() ) :
-        the_post();
-        ?>
+      <?php while (have_posts()) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class('entry'); ?>>
           <header class="entry-header">
-            <?php if ( is_singular() ) : ?>
+            <?php if (is_singular()) : ?>
               <h2 class="entry-title"><?php the_title(); ?></h2>
             <?php else : ?>
-              <h2 class="entry-title">
-                <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-              </h2>
+              <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
             <?php endif; ?>
           </header>
 
-          <?php if ( has_post_thumbnail() ) : ?>
+          <?php if (has_post_thumbnail()) : ?>
             <figure class="entry-media">
               <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'large', array( 'loading' => 'lazy' ) ); ?>
+                <?php the_post_thumbnail('large', array('loading' => 'lazy')); ?>
               </a>
             </figure>
           <?php endif; ?>
 
           <div class="entry-content">
             <?php
-            if ( is_singular() ) {
+            if (is_singular()) {
               the_content();
-              wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ai-studio-wp-example' ),
+              wp_link_pages(array(
+                'before' => '<div class="page-links">' . esc_html__('Pages:', 'ai-studio-wp-example'),
                 'after'  => '</div>',
-              ) );
+              ));
             } else {
               the_excerpt();
             }
@@ -73,32 +69,30 @@ get_header();
             <span class="entry-meta">
               <?php
               printf(
-                /* translators: %s: post date */
-                esc_html__( 'Posted on %s', 'ai-studio-wp-example' ),
-                '<time datetime="' . esc_attr( get_the_date( DATE_W3C ) ) . '">' . esc_html( get_the_date() ) . '</time>'
+                esc_html__('Posted on %s', 'ai-studio-wp-example'),
+                '<time datetime="' . esc_attr(get_the_date(DATE_W3C)) . '">' . esc_html(get_the_date()) . '</time>'
               );
               ?>
             </span>
           </footer>
         </article>
-        <?php
-      endwhile;
+      <?php endwhile; ?>
 
-      // Pagination
-      the_posts_pagination( array(
+      <?php
+      the_posts_pagination(array(
         'mid_size'  => 2,
-        'prev_text' => esc_html__( '« Previous', 'ai-studio-wp-example' ),
-        'next_text' => esc_html__( 'Next »', 'ai-studio-wp-example' ),
-      ) );
-
-    else :
+        'prev_text' => esc_html__('« Previous', 'ai-studio-wp-example'),
+        'next_text' => esc_html__('Next »', 'ai-studio-wp-example'),
+      ));
       ?>
+
+    <?php else : ?>
       <section class="no-results not-found">
         <header class="page-header">
-          <h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'ai-studio-wp-example' ); ?></h2>
+          <h2 class="page-title"><?php esc_html_e('Nothing Found', 'ai-studio-wp-example'); ?></h2>
         </header>
         <div class="page-content">
-          <p><?php esc_html_e( 'It seems we can’t find what you’re looking for. Try a search.', 'ai-studio-wp-example' ); ?></p>
+          <p><?php esc_html_e('It seems we can’t find what you’re looking for. Try a search.', 'ai-studio-wp-example'); ?></p>
           <?php get_search_form(); ?>
         </div>
       </section>
@@ -106,5 +100,6 @@ get_header();
   </section>
 </main>
 
-<?php
-get_footer();
+<?php wp_footer(); ?>
+</body>
+</html>
