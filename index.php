@@ -1,3 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agile611 | Human + Efficient</title>
+    
+    <!-- Google Fonts: Work Sans & Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Work+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              agile: {
+                bg: '#F5F5F5',       // White Smoke
+                text: '#242424',     // Black/Dark Grey
+                primary: '#057EB5',  // Dark Blue
+                vibrant: '#00B2E9',  // Blue
+                green: '#499497',    // Nature Green
+                turq: '#4CB8C9',     // Nature Turquoise
+                deep: '#01003f',     // Deep Dark Blue
+              }
+            },
+            fontFamily: {
+              sans: ['Nunito', 'sans-serif'],
+              heading: ['Work Sans', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-agile-bg text-agile-text antialiased">
+    <div id="root"></div>
+  </body>
+</html>
 <?php
 /**
  * Main index template
