@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agile611 | Human + Efficient</title>
+    <title>
+    <?php
+      global $page, $paged;
+      wp_title('|', true, 'right');
+      bloginfo('name');
+      $site_desc = get_bloginfo('description', 'display');
+      if ($site_desc && (is_home() || is_front_page())) echo ' | ' . $site_desc;
+      if ($paged >= 2 || $page >= 2) echo ' | ' . sprintf(__('Page %s'), max($paged, $page));
+    ?>
+    </title>
     
     <!-- Google Fonts: Work Sans & Nunito -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
