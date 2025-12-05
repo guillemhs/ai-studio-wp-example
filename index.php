@@ -1,196 +1,99 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-    <?php
-      global $page, $paged;
-      wp_title('|', true, 'right');
-      bloginfo('name');
-      $site_desc = get_bloginfo('description', 'display');
-      if ($site_desc && (is_home() || is_front_page())) echo ' | ' . $site_desc;
-      if ($paged >= 2 || $page >= 2) echo ' | ' . sprintf(__('Page %s'), max($paged, $page));
-    ?>
-    </title>
-    
-    <!-- Google Fonts: Work Sans & Nunito -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Work+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Tailwind Config -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              agile: {
-                bg: '#F5F5F5',       // White Smoke
-                text: '#242424',     // Black/Dark Grey
-                primary: '#057EB5',  // Dark Blue
-                vibrant: '#00B2E9',  // Blue
-                green: '#499497',    // Nature Green
-                turq: '#4CB8C9',     // Nature Turquoise
-                deep: '#01003f',     // Deep Dark Blue
-              }
-            },
-            fontFamily: {
-              sans: ['Nunito', 'sans-serif'],
-              heading: ['Work Sans', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
-  }
-}
-</script>
-</head>
-  <body class="bg-agile-bg text-agile-text antialiased">
-    <div id="root"></div>
-  </body>
-</html>
 <?php
 /**
  * Main index template
  * @package AI_Studio_WP_Example
  */
-
 get_header();
 ?>
 
 <main id="primary" class="site-main" role="main">
-
-  <!-- Primary Navigation (uses registered 'primary' menu) -->
-  <nav class="site-nav site-nav--primary" aria-label="<?php esc_attr_e( 'Primary Menu', 'ai-studio-wp-example' ); ?>">
-    <?php
-    wp_nav_menu( array(
-      'theme_location' => 'primary',
-      'container'      => 'div',
-      'container_class'=> 'primary-menu__container',
-      'menu_class'     => 'primary-menu',
-      'fallback_cb'    => 'wp_page_menu', // fallback shows pages if no menu assigned
-      'depth'          => 2,
-    ) );
-    ?>
-  </nav>
-
-  <!-- Hero / Intro -->
   <section class="site-hero alignwide">
-    <div class="site-hero__inner">
-      <h1 class="site-hero__title"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></h1>
-      <?php
-      $description = get_bloginfo( 'description', 'display' );
-      if ( $description ) :
-      ?>
-        <p class="site-hero__tagline"><?php echo esc_html( $description ); ?></p>
+    <div class="site-hero__inner container mx-auto px-4 py-10">
+      <h1 class="site-hero__title font-heading text-3xl md:text-4xl">
+        <?php echo esc_html(get_bloginfo('name')); ?>
+      </h1>
+      <?php if ($desc = get_bloginfo('description', 'display')) : ?>
+        <p class="site-hero__tagline mt-2 text-lg"><?php echo esc_html($desc); ?></p>
       <?php endif; ?>
     </div>
   </section>
 
-  <!-- Content Loop -->
-  <section class="content-list alignwide">
-    <?php if ( have_posts() ) : ?>
+  <section class="content-list alignwide container mx-auto px-4">
+    <?php if (have_posts()) : ?>
 
-      <?php if ( is_home() && ! is_front_page() ) : ?>
-        <header class="page-header">
-          <h2 class="page-title screen-reader-text"><?php single_post_title(); ?></h2>
+      <?php if (is_home() && !is_front_page()) : ?>
+        <header class="page-header sr-only">
+          <h2 class="page-title"><?php single_post_title(); ?></h2>
         </header>
       <?php endif; ?>
 
-      <?php while ( have_posts() ) : the_post(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+      <?php while (have_posts()) : the_post(); ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('entry py-6 border-b border-gray-200'); ?>>
           <header class="entry-header">
-            <?php if ( is_singular() ) : ?>
-              <h2 class="entry-title"><?php the_title(); ?></h2>
+            <?php if (is_singular()) : ?>
+              <h2 class="entry-title font-heading text-2xl"><?php the_title(); ?></h2>
             <?php else : ?>
-              <h2 class="entry-title">
-                <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+              <h2 class="entry-title font-heading text-2xl">
+                <a href="<?php the_permalink(); ?>" rel="bookmark" class="hover:underline"><?php the_title(); ?></a>
               </h2>
             <?php endif; ?>
           </header>
 
-          <?php if ( has_post_thumbnail() ) : ?>
-            <figure class="entry-media">
+          <?php if (has_post_thumbnail()) : ?>
+            <figure class="entry-media my-4">
               <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'large', array( 'loading' => 'lazy' ) ); ?>
+                <?php the_post_thumbnail('large', array('loading' => 'lazy', 'class' => 'w-full h-auto rounded')); ?>
               </a>
             </figure>
           <?php endif; ?>
 
-          <div class="entry-content">
+          <div class="entry-content prose max-w-none">
             <?php
-            if ( is_singular() ) {
+            if (is_singular()) {
               the_content();
-              wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ai-studio-wp-example' ),
+              wp_link_pages(array(
+                'before' => '<div class="page-links">' . esc_html__('Pages:', 'ai-studio-wp-example'),
                 'after'  => '</div>',
-              ) );
+              ));
             } else {
               the_excerpt();
             }
             ?>
           </div>
 
-          <footer class="entry-footer">
-            <span class="entry-meta">
-              <?php
-              printf(
-                esc_html__( 'Posted on %s', 'ai-studio-wp-example' ),
-                '<time datetime="' . esc_attr( get_the_date( DATE_W3C ) ) . '">' . esc_html( get_the_date() ) . '</time>'
-              );
-              ?>
-            </span>
+          <footer class="entry-footer mt-3 text-sm text-gray-600">
+            <?php
+            printf(
+              esc_html__('Posted on %s', 'ai-studio-wp-example'),
+              '<time datetime="' . esc_attr(get_the_date(DATE_W3C)) . '">' . esc_html(get_the_date()) . '</time>'
+            );
+            ?>
           </footer>
         </article>
       <?php endwhile; ?>
 
-      <?php
-      the_posts_pagination( array(
-        'mid_size'  => 2,
-        'prev_text' => esc_html__( '« Previous', 'ai-studio-wp-example' ),
-        'next_text' => esc_html__( 'Next »', 'ai-studio-wp-example' ),
-      ) );
-      ?>
+      <div class="pagination my-8">
+        <?php
+        the_posts_pagination(array(
+          'mid_size'  => 2,
+          'prev_text' => esc_html__('« Previous', 'ai-studio-wp-example'),
+          'next_text' => esc_html__('Next »', 'ai-studio-wp-example'),
+        ));
+        ?>
+      </div>
 
     <?php else : ?>
-      <section class="no-results not-found">
+      <section class="no-results not-found py-10">
         <header class="page-header">
-          <h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'ai-studio-wp-example' ); ?></h2>
+          <h2 class="page-title font-heading text-2xl"><?php esc_html_e('Nothing Found', 'ai-studio-wp-example'); ?></h2>
         </header>
-        <div class="page-content">
-          <p><?php esc_html_e( 'It seems we can’t find what you’re looking for. Try a search.', 'ai-studio-wp-example' ); ?></p>
+        <div class="page-content mt-2">
+          <p><?php esc_html_e('It seems we can’t find what you’re looking for. Try a search.', 'ai-studio-wp-example'); ?></p>
           <?php get_search_form(); ?>
         </div>
       </section>
     <?php endif; ?>
   </section>
-
-  <!-- Optional: Footer Navigation (usually placed in footer.php) -->
-  <nav class="site-nav site-nav--footer" aria-label="<?php esc_attr_e( 'Footer Menu', 'ai-studio-wp-example' ); ?>">
-    <?php
-    wp_nav_menu( array(
-      'theme_location' => 'footer',
-      'container'      => 'div',
-      'container_class'=> 'footer-menu__container',
-      'menu_class'     => 'footer-menu',
-      'fallback_cb'    => false,
-      'depth'          => 1,
-    ) );
-    ?>
-  </nav>
-
 </main>
 
 <?php
