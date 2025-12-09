@@ -34,3 +34,10 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('ai-studio-app', $app_js_uri, array(), $ver, true);
   }
 });
+
+// In functions.php
+function agile611_year_shortcode() {
+    return date('Y');
+}
+add_shortcode('agile611_year', 'agile611_year_shortcode');
+add_filter( 'the_content', 'do_shortcode' );
