@@ -1,8 +1,10 @@
 <?php
 /**
- * Front page template
- * @package AI_Studio_WP_Example
+ * Template Name: Front Page
+ *
+ * Custom front page template for Agile611.
  */
+
 get_header();
 ?>
 
@@ -15,52 +17,41 @@ get_header();
     <div class="wp-block-columns alignwide are-vertically-aligned-center">
       <!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
       <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%">
-        <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-        <div class="wp-block-group">
-          <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","fontSize":"16px","fontStyle":"normal","fontWeight":"700"},"color":{"text":"#00B2E9"}}} -->
-          <p class="has-text-color" style="color:#00B2E9;font-size:16px;font-style:normal;font-weight:700;text-transform:uppercase">Agile Transformation</p>
-          <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
 
-        <!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":"1.1","fontSize":"4rem"}},"textColor":"white"} -->
-        <h1 class="wp-block-heading has-white-color has-text-color" style="font-size:4rem;line-height:1.1">
-          Hacemos el trabajo más <span style="color:#00B2E9">Humano</span> y Eficiente
-        </h1>
-        <!-- /wp:heading -->
-        
-        <!-- Animated Topics Text Slider -->
+        <!-- Label pill -->
         <!-- wp:html -->
-        <div class="wp-block-html">
-          <div class="agile-text-slider">
-            <span class="agile-text-slider-content">
-              <span class="agile-text-slider-item">DevOps &amp; Cloud</span>
-              <span class="agile-text-slider-item">Agile Coaching</span>
-              <span class="agile-text-slider-item">Ciberseguridad</span>
-              <span class="agile-text-slider-item">Inteligencia Artificial</span>
-              <span class="agile-text-slider-item">DevOps &amp; Cloud</span>
-            </span>
-          </div>
+        <div class="hero-label">
+          <span class="hero-label__dot"></span>
+          <span>Agile Transformation</span>
         </div>
         <!-- /wp:html -->
 
-        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.5rem"}},"textColor":"white"} -->
-        <p class="has-white-color has-text-color" style="font-size:1.5rem">
+        <!-- Main heading -->
+        <!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":"1.05","fontSize":"4.5rem","fontWeight":"800","letterSpacing":"-0.03em"}},"textColor":"white"} -->
+        <h1 class="wp-block-heading has-white-color has-text-color" style="font-size:4.5rem;line-height:1.05;font-weight:800;letter-spacing:-0.03em;">
+          Hacemos el trabajo más <span style="color:#00B2E9">Humano</span> y Eficiente
+        </h1>
+        <!-- /wp:heading -->
+
+        <!-- Lead paragraph -->
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.25rem"}},"textColor":"white"} -->
+        <p class="has-white-color has-text-color" style="font-size:1.25rem;max-width:36rem;">
           Ayudamos a personas y organizaciones a mejorar sus formas de trabajar mediante innovación, calidad y talento humano.
         </p>
         <!-- /wp:paragraph -->
 
+        <!-- Hero CTAs -->
         <!-- wp:buttons -->
         <div class="wp-block-buttons">
           <!-- wp:button {"backgroundColor":"agile-vibrant","textColor":"white"} -->
           <div class="wp-block-button">
             <a class="wp-block-button__link has-white-color has-agile-vibrant-background-color has-text-color has-background wp-element-button">
-              Nuestros Servicios
+              Nuestros Servicios →
             </a>
           </div>
           <!-- /wp:button -->
 
-          <!-- wp:button {"className":"is-style-outline","style":{"color":{"text":"#ffffff"}}} -->
+          <!-- wp:button {"className":"is-style-outline"} -->
           <div class="wp-block-button is-style-outline">
             <a class="wp-block-button__link has-text-color wp-element-button" style="color:#ffffff">
               Contáctanos
@@ -69,36 +60,47 @@ get_header();
           <!-- /wp:button -->
         </div>
         <!-- /wp:buttons -->
+
+        <!-- Topics row under hero -->
+        <!-- wp:group {"style":{"spacing":{"margin":{"top":"1.5rem"}}},"layout":{"type":"flex","flexWrap":"wrap","gap":"1.5rem"}} -->
+        <div class="wp-block-group hero-topics">
+          <span>DevOps &amp; Cloud</span>
+          <span>Agile Coaching</span>
+          <span>Ciberseguridad</span>
+        </div>
+        <!-- /wp:group -->
+
       </div>
       <!-- /wp:column -->
 
       <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
       <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%">
-        
+
         <!-- TERMINAL CARD BLOCK START -->
-        <!-- wp:group {"style":{"border":{"radius":"12px","width":"1px","style":"solid","color":"#ffffff20"},"spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}},"color":{"background":"#0a192fcc"}},"layout":{"type":"default"}} -->
-        <div class="wp-block-group has-background" style="background-color:#0a192fcc;border-radius:12px;border-color:#ffffff20;border-width:1px;border-style:solid;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+        <!-- Add hero-terminal class via "Additional CSS class(es)" -->
+        <!-- wp:group {"style":{"border":{"radius":"12px","width":"1px","style":"solid","color":"#ffffff20"},"spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}},"color":{"background":"#0a192fcc"}},"layout":{"type":"default"},"className":"hero-terminal"} -->
+        <div class="wp-block-group hero-terminal has-background" style="background-color:#0a192fcc;border-radius:12px;border-color:#ffffff20;border-width:1px;border-style:solid;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
             
           <!-- Header of the Terminal -->
           <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1.5rem","right":"1.5rem"}},"border":{"bottom":{"color":"#ffffff0d","width":"1px"}},"color":{"background":"#020c1b"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
           <div class="wp-block-group has-background" style="background-color:#020c1b;border-bottom-color:#ffffff0d;border-bottom-width:1px;padding-top:1rem;padding-right:1.5rem;padding-bottom:1rem;padding-left:1.5rem">
-            <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+            <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","gap":"0.35rem"}} -->
             <div class="wp-block-group">
-              <!-- wp:group {"style":{"border":{"radius":"99px"},"spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}},"dimensions":{"minHeight":"12px","minWidth":"12px"}},"backgroundColor":"vivid-red"} -->
-              <div class="wp-block-group has-vivid-red-background-color has-background" style="border-radius:99px;min-height:12px;min-width:12px;padding:0"></div>
+              <!-- wp:group {"style":{"border":{"radius":"99px"},"dimensions":{"minHeight":"12px","minWidth":"12px"}},"backgroundColor":"vivid-red"} -->
+              <div class="wp-block-group has-vivid-red-background-color has-background" style="border-radius:99px;min-height:12px;min-width:12px"></div>
               <!-- /wp:group -->
-              <!-- wp:group {"style":{"border":{"radius":"99px"},"spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}},"dimensions":{"minHeight":"12px","minWidth":"12px"}},"backgroundColor":"luminous-vivid-amber"} -->
-              <div class="wp-block-group has-luminous-vivid-amber-background-color has-background" style="border-radius:99px;min-height:12px;min-width:12px;padding:0"></div>
+              <!-- wp:group {"style":{"border":{"radius":"99px"},"dimensions":{"minHeight":"12px","minWidth":"12px"}},"backgroundColor":"luminous-vivid-amber"} -->
+              <div class="wp-block-group has-luminous-vivid-amber-background-color has-background" style="border-radius:99px;min-height:12px;min-width:12px"></div>
               <!-- /wp:group -->
-              <!-- wp:group {"style":{"border":{"radius":"99px"},"spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}},"dimensions":{"minHeight":"12px","minWidth":"12px"}},"backgroundColor":"pale-cyan-blue"} -->
-              <div class="wp-block-group has-pale-cyan-blue-background-color has-background" style="border-radius:99px;min-height:12px;min-width:12px;padding:0"></div>
+              <!-- wp:group {"style":{"border":{"radius":"99px"},"dimensions":{"minHeight":"12px","minWidth":"12px"}},"backgroundColor":"pale-cyan-blue"} -->
+              <div class="wp-block-group has-pale-cyan-blue-background-color has-background" style="border-radius:99px;min-height:12px;min-width:12px"></div>
               <!-- /wp:group -->
             </div>
             <!-- /wp:group -->
 
             <!-- wp:paragraph {"style":{"typography":{"fontFamily":"monospace","fontSize":"0.875rem"}},"textColor":"gray-400"} -->
             <p class="has-text-color" style="color:#9ca3af;font-family:monospace;font-size:0.875rem">
-              user@agile611:~/events
+              &gt;_ user@agile611:~/training-schedule
             </p>
             <!-- /wp:paragraph -->
           </div>

@@ -34,6 +34,21 @@ body {
   transform: translateY(-1px);
 }
 
+/* Make all buttons a bit more “hero like” by default */
+.wp-block-buttons .wp-block-button .wp-block-button__link {
+  border-radius: 999px;
+  font-weight: 600;
+  padding-inline: 2.25rem;
+  padding-block: 0.95rem;
+}
+
+/* Outline style button (used for secondary CTA in hero) */
+.wp-block-button.is-style-outline .wp-block-button__link {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: transparent;
+  color: #ffffff;
+}
+
 /* -------------------------------------------------------------------------- */
 /*	Card Style Pattern (Service Cards)
 /* -------------------------------------------------------------------------- */
@@ -68,7 +83,7 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/*	Text Slider Animation (Pure CSS)
+/*	Text Slider Animation (Pure CSS) – optional alternative to topics row
 /* -------------------------------------------------------------------------- */
 
 .agile-text-slider {
@@ -154,11 +169,34 @@ select:focus {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Layout tweak: remove gap under top bar
+/*  Layout tweaks
 /* -------------------------------------------------------------------------- */
 
+/* We do NOT zero out the first-child margin anymore – let WP handle block gaps */
+/* If you ever re-add those rules, they will remove the breathing room below header */
+/*
+body .wp-site-blocks > *:first-child {
+  margin-top: 0 !important;
+}
+body .wp-site-blocks > .wp-block-template-part + * {
+  margin-top: 0 !important;
+}
+*/
+
+/* Full-width sections inside main: horizontal padding + center wide content */
+main.site-main > .wp-block-group.alignfull {
+  padding-left: var(--wp--preset--spacing--40);
+  padding-right: var(--wp--preset--spacing--40);
+}
+
+main.site-main > .wp-block-group.alignfull .alignwide {
+  max-width: var(--wp--style--global--wide-size);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* -------------------------------------------------------------------------- */
-/*  Replace header text with logo image
+/*  Logo and Header Nav
 /* -------------------------------------------------------------------------- */
 
 .agile611-logo {
@@ -191,7 +229,8 @@ select:focus {
 
 /* Main header nav wrapper */
 .agile611-main-nav {
-  gap: 2rem;         /* spacing between items */
+  display: flex;
+  align-items: center;
   font-weight: 600;
 }
 
@@ -223,20 +262,20 @@ select:focus {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Navigation: hide sibling submenus for classic menu markup
+/*  Navigation: hide sibling submenus (classic menu markup)
 /* -------------------------------------------------------------------------- */
 
-/* 1. Hide ALL submenus by default */
+/* Hide ALL submenus by default */
 .agile611-main-nav .sub-menu {
   display: none;
 }
 
-/* 2. Show submenu when the parent is hovered */
+/* Show submenu when parent is hovered */
 .agile611-main-nav .menu-item-has-children:hover > .sub-menu {
   display: block;
 }
 
-/* 3. Also show submenu for the current branch (so the path stays open) */
+/* Show submenu for the current branch so current path stays open */
 .agile611-main-nav .current-menu-item > .sub-menu,
 .agile611-main-nav .current-menu-ancestor > .sub-menu,
 .agile611-main-nav .current-menu-parent > .sub-menu,
@@ -245,19 +284,23 @@ select:focus {
   display: block;
 }
 
-/* Optional: style the dropdowns a bit so they don’t appear as a mega list */
+/* Dropdown positioning and appearance */
+.agile611-main-nav li {
+  position: relative;
+}
+
 .agile611-main-nav .sub-menu {
   position: absolute;
-  background-color: #01003f; /* same as header background */
+  top: 100%;
+  left: 0;
+  background-color: #01003f;
   padding: 1rem 1.5rem;
   margin: 0;
   list-style: none;
   min-width: 260px;
   z-index: 9999;
-}
-
-.agile611-main-nav li {
-  position: relative; /* so submenus position under each LI */
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
 }
 
 .agile611-main-nav .sub-menu li {
@@ -268,14 +311,89 @@ select:focus {
   color: #ffffff;
   text-decoration: none;
   white-space: normal;
+  font-weight: 500;
 }
 
 .agile611-main-nav .sub-menu a:hover {
   text-decoration: underline;
 }
 
-main.site-main > .wp-block-group.alignfull {
-  padding-left: var(--wp--preset--spacing--40);
-  padding-right: var(--wp--preset--spacing--40);
+/* Optional: nested submenus flyout to the right */
+.agile611-main-nav .sub-menu .sub-menu {
+  top: 0;
+  left: 100%;
 }
 
+/* -------------------------------------------------------------------------- */
+/*  Hero-specific styling (front page)
+/* -------------------------------------------------------------------------- */
+
+/* “AGILE TRANSFORMATION” pill label */
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(0, 178, 233, 0.12);
+  color: #00B2E9;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero-label__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: #00B2E9;
+}
+
+/* Topics row under hero (DevOps & Cloud · Agile Coaching · Ciberseguridad) */
+.hero-topics {
+  margin-top: 1.5rem;
+}
+
+.hero-topics span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(156, 163, 175, 1); /* gray-400 */
+  font-size: 0.95rem;
+}
+
+.hero-topics span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(156, 163, 175, 0.85);
+}
+
+/* Terminal card on the right */
+.hero-terminal {
+  border-radius: 16px;
+  background: radial-gradient(circle at top left, #112240 0%, #020c1b 60%, #000000 100%);
+  box-shadow: 0 24px 45px rgba(0,0,0,0.55);
+  overflow: hidden;
+}
+
+/* Fine‑tune text inside terminal body (the padding:1.5rem group) */
+.hero-terminal .wp-block-group[style*="padding:1.5rem"] {
+  font-size: 0.95rem;
+}
+
+/* Ensure terminal header dots are tight */
+.hero-terminal .wp-block-group.has-background {
+  box-shadow: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  (Optional) DEBUG – enable temporarily only
+/* -------------------------------------------------------------------------- */
+/*
+body {
+  outline: 4px solid red !important;
+}
+*/
