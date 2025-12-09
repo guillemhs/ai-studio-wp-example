@@ -207,3 +207,25 @@ body .wp-site-blocks > .wp-block-template-part + * {
 .agile611-main-nav a:hover {
   text-decoration: underline;
 }
+
+.agile611-logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.agile611-main-nav__list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.agile611-main-nav__list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.agile611-main-nav__list a:hover {
+  text-decoration: underline;
+}

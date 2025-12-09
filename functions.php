@@ -41,3 +41,12 @@ function agile611_year_shortcode() {
 }
 add_shortcode('agile611_year', 'agile611_year_shortcode');
 add_filter( 'the_content', 'do_shortcode' );
+
+function agile611_register_menus() {
+    register_nav_menus(
+        array(
+            'primary' => __('Primary Menu', 'ai-studio-wp-example'),
+        )
+    );
+}
+add_action('after_setup_theme', 'agile611_register_menus');
