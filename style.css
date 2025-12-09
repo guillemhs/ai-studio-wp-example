@@ -30,20 +30,23 @@ body {
   transform: translateY(-1px);
 }
 
-/* Hero-style buttons by default */
+/* Hero-style buttons: rectangular with soft corners */
 .wp-block-buttons .wp-block-button .wp-block-button__link {
-  border-radius: 999px;
+  border-radius: 8px;              /* was 999px (pill) */
   font-weight: 600;
-  padding-inline: 2.25rem;
-  padding-block: 0.95rem;
+  padding-inline: 1.8rem;          /* slightly tighter padding */
+  padding-block: 0.9rem;
+  line-height: 1.2;
 }
 
-/* Outline buttons (used for secondary CTA in hero) */
+/* Outline secondary CTA: same size, just border instead of fill */
 .wp-block-button.is-style-outline .wp-block-button__link {
+  border-radius: 8px;              /* match primary */
   border: 1px solid rgba(255, 255, 255, 0.8);
   background: transparent;
   color: #ffffff;
 }
+
 
 /* -------------------------------------------------------------------------- */
 /* Layout tweaks                                                              */
