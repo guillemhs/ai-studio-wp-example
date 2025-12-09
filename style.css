@@ -161,18 +161,22 @@ body .wp-site-blocks > .wp-block-template-part + * {
   margin-top: 0 !important;
 }
 
-/* Replace header text with logo image */
-.header-logo-text {
-  /* Hide the actual text but keep it for screen readers */
+/* -------------------------------------------------------------------------- */
+/*  Replace header text with logo image
+/* -------------------------------------------------------------------------- */
+
+.agile611-logo {
+  display: block;
+  width: 180px;     /* adjust as needed */
+  height: 40px;     /* adjust as needed */
+
+  /* Hide the text visually but keep it for accessibility/SEO */
   text-indent: -9999px;
   white-space: nowrap;
   overflow: hidden;
 
-  display: block;
-  width: 160px;        /* Adjust to your logo width */
-  height: 40px;        /* Adjust to your logo height */
-  background-image: url('https://www.agile611.com/wp-content/uploads/2020/09/cropped-logo-header.png');
-  background-size: contain;
+  background-image: url("https://www.agile611.com/wp-content/uploads/2020/09/cropped-logo-header.png");
   background-repeat: no-repeat;
   background-position: left center;
+  background-size: contain;
 }
