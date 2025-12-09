@@ -95,11 +95,11 @@ body {
 }
 
 @keyframes agileSlideVertical {
-  0%, 20% { transform: translateY(0); }
-  25%, 45% { transform: translateY(-1.1em); }
-  50%, 70% { transform: translateY(-2.2em); }
-  75%, 95% { transform: translateY(-3.3em); }
-  100% { transform: translateY(0); } 
+  0%, 20%   { transform: translateY(0); }
+  25%, 45%  { transform: translateY(-1.1em); }
+  50%, 70%  { transform: translateY(-2.2em); }
+  75%, 95%  { transform: translateY(-3.3em); }
+  100%      { transform: translateY(0); } 
 }
 
 /* -------------------------------------------------------------------------- */
@@ -107,17 +107,25 @@ body {
 /* -------------------------------------------------------------------------- */
 
 /* Contact Form 7 & General Inputs */
-input[type="text"], input[type="email"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
   padding: 12px 16px;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
   font-family: var(--wp--preset--font-family--body);
   width: 100%;
-  background-color: white;
+  background-color: #ffffff;
   transition: border-color 0.2s ease;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
   border-color: var(--wp--preset--color--agile-primary);
   box-shadow: 0 0 0 3px rgba(5, 126, 181, 0.1);
@@ -128,7 +136,7 @@ input:focus, textarea:focus, select:focus {
 .woocommerce a.button,
 .woocommerce input.button {
   background-color: var(--wp--preset--color--agile-primary) !important;
-  color: white !important;
+  color: #ffffff !important;
   border-radius: 4px !important;
   padding: 12px 24px !important;
   font-weight: 600 !important;
@@ -142,7 +150,7 @@ input:focus, textarea:focus, select:focus {
 
 /* Elementor Fixes */
 .elementor-section.elementor-section-boxed > .elementor-container {
-    max-width: var(--wp--style--global--content-size);
+  max-width: var(--wp--style--global--content-size);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -189,13 +197,13 @@ body .wp-site-blocks > .wp-block-template-part + * {
 
 .agile611-logo-img {
   display: block;
-  height: 40px;          /* adjust as needed */
+  height: 40px;      /* adjust as needed */
   width: auto;
 }
 
-/* Main header nav */
+/* Main header nav wrapper */
 .agile611-main-nav {
-  gap: 2rem;                 /* spacing between items */
+  gap: 2rem;         /* spacing between items */
   font-weight: 600;
 }
 
@@ -206,11 +214,6 @@ body .wp-site-blocks > .wp-block-template-part + * {
 
 .agile611-main-nav a:hover {
   text-decoration: underline;
-}
-
-.agile611-logo-img {
-  height: 40px;
-  width: auto;
 }
 
 .agile611-main-nav__list {
@@ -226,20 +229,41 @@ body .wp-site-blocks > .wp-block-template-part + * {
   text-decoration: none;
   font-weight: 600;
 }
+
 .agile611-main-nav__list a:hover {
   text-decoration: underline;
 }
 
-/* Hide all submenus by default */
-.wp-block-navigation .wp-block-navigation__submenu-container {
+/* -------------------------------------------------------------------------- */
+/*  Navigation: hide sibling submenus
+/* -------------------------------------------------------------------------- */
+
+/* 
+   IMPORTANT:
+   This assumes you are using a Navigation block and the markup includes:
+   - <nav class="wp-block-navigation">
+   - <li class="wp-block-navigation-item ...">
+   - <ul class="wp-block-navigation__submenu-container"> for dropdowns
+*/
+
+/* Hide ALL submenus by default */
+nav.wp-block-navigation .wp-block-navigation__submenu-container {
   display: none;
 }
 
-/* Show submenu for current branch OR on hover */
-.wp-block-navigation .current-menu-item > .wp-block-navigation__submenu-container,
-.wp-block-navigation .current-menu-ancestor > .wp-block-navigation__submenu-container,
-.wp-block-navigation .current-menu-parent > .wp-block-navigation__submenu-container,
-.wp-block-navigation li:hover > .wp-block-navigation__submenu-container {
+/* Show submenu only for:
+   - current item / ancestor / parent
+   - OR when the parent item is hovered
+*/
+nav.wp-block-navigation .wp-block-navigation-item:hover > .wp-block-navigation__submenu-container,
+nav.wp-block-navigation .current-menu-item > .wp-block-navigation__submenu-container,
+nav.wp-block-navigation .current-menu-ancestor > .wp-block-navigation__submenu-container,
+nav.wp-block-navigation .current-menu-parent > .wp-block-navigation__submenu-container {
   display: block;
+}
+
+/* Optional: make sure long mega-lists don’t stretch too wide */
+nav.wp-block-navigation .wp-block-navigation__submenu-container {
+  max-width: 320px;
 }
 
