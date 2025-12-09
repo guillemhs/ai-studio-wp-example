@@ -157,18 +157,6 @@ select:focus {
 /*  Layout tweak: remove gap under top bar
 /* -------------------------------------------------------------------------- */
 
-/* In block themes, the first block after the header often has a default top margin.
-   We reset it so the hero/first section touches the top bar. */
-
-body .wp-site-blocks > *:first-child {
-  margin-top: 0 !important;
-}
-
-/* If your header is a template part, make sure the next block has no extra top margin */
-body .wp-site-blocks > .wp-block-template-part + * {
-  margin-top: 0 !important;
-}
-
 /* -------------------------------------------------------------------------- */
 /*  Replace header text with logo image
 /* -------------------------------------------------------------------------- */
@@ -286,4 +274,8 @@ body .wp-site-blocks > .wp-block-template-part + * {
   text-decoration: underline;
 }
 
+main.site-main > .wp-block-group.alignfull {
+  padding-left: var(--wp--preset--spacing--40);
+  padding-right: var(--wp--preset--spacing--40);
+}
 
