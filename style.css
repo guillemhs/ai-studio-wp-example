@@ -160,3 +160,19 @@ body .wp-site-blocks > *:first-child {
 body .wp-site-blocks > .wp-block-template-part + * {
   margin-top: 0 !important;
 }
+
+/* Replace header text with logo image */
+.header-logo-text {
+  /* Hide the actual text but keep it for screen readers */
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  display: block;
+  width: 160px;        /* Adjust to your logo width */
+  height: 40px;        /* Adjust to your logo height */
+  background-image: url('https://www.agile611.com/wp-content/uploads/2020/09/cropped-logo-header.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
