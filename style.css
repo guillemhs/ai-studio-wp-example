@@ -180,3 +180,15 @@ body .wp-site-blocks > .wp-block-template-part + * {
   background-position: left center;
   background-size: contain;
 }
+
+/* Logo in header */
+.agile611-logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.agile611-logo-img {
+  display: block;
+  height: 40px;          /* adjust as needed */
+  width: auto;
+}
