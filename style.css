@@ -192,3 +192,18 @@ body .wp-site-blocks > .wp-block-template-part + * {
   height: 40px;          /* adjust as needed */
   width: auto;
 }
+
+/* Main header nav */
+.agile611-main-nav {
+  gap: 2rem;                 /* spacing between items */
+  font-weight: 600;
+}
+
+.agile611-main-nav a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.agile611-main-nav a:hover {
+  text-decoration: underline;
+}
