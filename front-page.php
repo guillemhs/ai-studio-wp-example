@@ -52,14 +52,6 @@ get_header();
             </a>
           </div>
           <!-- /wp:button -->
-
-          <!-- wp:button {"className":"is-style-outline"} -->
-          <div class="wp-block-button is-style-outline">
-            <a class="wp-block-button__link has-text-color wp-element-button" style="color:#ffffff">
-              Contáctanos
-            </a>
-          </div>
-          <!-- /wp:button -->
         </div>
         <!-- /wp:buttons -->
 
