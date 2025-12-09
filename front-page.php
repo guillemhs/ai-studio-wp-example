@@ -86,21 +86,17 @@ get_header();
           <!-- Header of the terminal -->
           <!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"1.5rem","right":"1.5rem"}},"border":{"bottom":{"color":"#ffffff0d","width":"1px"}},"color":{"background":"#020c1b"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
           <div class="wp-block-group has-background" style="background-color:#020c1b;border-bottom-color:#ffffff0d;border-bottom-width:1px;padding-top:1rem;padding-right:1.5rem;padding-bottom:1rem;padding-left:1.5rem">
-            <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","gap":"0.35rem"}} -->
-            <div class="wp-block-group">
-              <!-- colored dots -->
-              <!-- wp:group {"style":{"border":{"radius":"99px"},"dimensions":{"minHeight":"12px","minWidth":"12px"}},"backgroundColor":"vivid-red"} -->
-              <div class="wp-block-group has-vivid-red-background-color has-background" style="border-radius:99px;min-height:12px;min-width:12px"></div>
-              <!-- /wp:group -->
-              <!-- wp:group {"style":{"border":{"radius":"99px"},"dimensions":{"minHeight":"12px","minWidth":"12px"}},"backgroundColor":"luminous-vivid-amber"} -->
-              <div class="wp-block-group has-luminous-vivid-amber-background-color has-background" style="border-radius:99px;min-height:12px;min-width:12px"></div>
-              <!-- /wp:group -->
-              <!-- wp:group {"style":{"border":{"radius":"99px"},"dimensions":{"minHeight":"12px","minWidth":"12px"}},"backgroundColor":"pale-cyan-blue"} -->
-              <div class="wp-block-group has-pale-cyan-blue-background-color has-background" style="border-radius:99px;min-height:12px;min-width:12px"></div>
-              <!-- /wp:group -->
-            </div>
-            <!-- /wp:group -->
 
+            <!-- LEFT: macOS dots -->
+            <!-- wp:html -->
+            <div class="terminal-dots">
+              <span class="terminal-dot terminal-dot--red"></span>
+              <span class="terminal-dot terminal-dot--yellow"></span>
+              <span class="terminal-dot terminal-dot--green"></span>
+            </div>
+            <!-- /wp:html -->
+
+            <!-- RIGHT: path text -->
             <!-- wp:paragraph {"style":{"typography":{"fontFamily":"monospace","fontSize":"0.875rem"}},"textColor":"gray-400"} -->
             <p class="has-text-color" style="color:#9ca3af;font-family:monospace;font-size:0.875rem">
               &gt;_ user@agile611:~/training-schedule

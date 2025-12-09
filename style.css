@@ -244,6 +244,38 @@ main.site-main > .wp-block-group.alignfull .alignwide {
 }
 
 /* -------------------------------------------------------------------------- */
+/* macOS-style terminal dots                                                  */
+/* -------------------------------------------------------------------------- */
+
+.terminal-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Base circle */
+.terminal-dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
+}
+
+/* Colors approximating macOS traffic lights */
+.terminal-dot--red {
+  background-color: #ff5f57;
+}
+
+.terminal-dot--yellow {
+  background-color: #ffbd2e;
+}
+
+.terminal-dot--green {
+  background-color: #28c840;
+}
+
+/* -------------------------------------------------------------------------- */
 /* Service cards                                                              */
 /* -------------------------------------------------------------------------- */
 
@@ -355,6 +387,7 @@ main.site-main > .wp-block-group.alignfull .alignwide {
   max-width: 480px;
   margin-left: auto;
 }
+
 /* On smaller screens, let the terminal take full width */
 @media (max-width: 900px) {
   .hero-terminal-column {
