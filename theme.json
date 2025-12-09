@@ -216,14 +216,16 @@
           "text": "var(--wp--preset--color--agile-primary)"
         },
         ":hover": {
-           "color": { "text": "var(--wp--preset--color--agile-vibrant)" }
+          "color": {
+            "text": "var(--wp--preset--color--agile-vibrant)"
+          }
         }
       }
     },
     "blocks": {
       "core/navigation": {
         "typography": {
-           "fontSize": "1rem"
+          "fontSize": "1rem"
         }
       }
     }
