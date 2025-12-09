@@ -229,3 +229,17 @@ body .wp-site-blocks > .wp-block-template-part + * {
 .agile611-main-nav__list a:hover {
   text-decoration: underline;
 }
+
+/* Hide all submenus by default */
+.wp-block-navigation .wp-block-navigation__submenu-container {
+  display: none;
+}
+
+/* Show submenu for current branch OR on hover */
+.wp-block-navigation .current-menu-item > .wp-block-navigation__submenu-container,
+.wp-block-navigation .current-menu-ancestor > .wp-block-navigation__submenu-container,
+.wp-block-navigation .current-menu-parent > .wp-block-navigation__submenu-container,
+.wp-block-navigation li:hover > .wp-block-navigation__submenu-container {
+  display: block;
+}
+
