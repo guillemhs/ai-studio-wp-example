@@ -2,39 +2,35 @@
 Theme Name: Agile611
 Theme URI: https://agile611.com
 Author: Agile611
-Description: A modern Block Theme (FSE) for Agile611 focusing on Human + Efficient values.
-Version: 1.0.5
+Description: Agile611 block-based theme.
+Version: 1.0.6
 Requires at least: 6.5
-Tested up to: 6.8.3
+Tested up to: 6.9
 Requires PHP: 7.4
-Tags: block-theme, full-site-editing, custom-colors, custom-menu, three-columns, two-columns, woocommerce, accessibility-ready
 */
-
-/* 
- * GLOBAL VARIABLES
- * Note: Colors and Spacing are generated automatically from theme.json 
- */
 
 body {
   background-color: var(--wp--preset--color--agile-bg);
   color: var(--wp--preset--color--agile-text);
   -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
 
 /* -------------------------------------------------------------------------- */
-/*	General Block Styles
+/* Global Buttons                                                             */
 /* -------------------------------------------------------------------------- */
 
 .wp-block-button__link {
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
 .wp-block-button__link:hover {
-  opacity: 0.9;
+  opacity: 0.92;
   transform: translateY(-1px);
 }
 
-/* Make all buttons a bit more “hero like” by default */
+/* Hero-style buttons by default */
 .wp-block-buttons .wp-block-button .wp-block-button__link {
   border-radius: 999px;
   font-weight: 600;
@@ -42,7 +38,7 @@ body {
   padding-block: 0.95rem;
 }
 
-/* Outline style button (used for secondary CTA in hero) */
+/* Outline buttons (used for secondary CTA) */
 .wp-block-button.is-style-outline .wp-block-button__link {
   border: 1px solid rgba(255, 255, 255, 0.8);
   background: transparent;
@@ -50,140 +46,13 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/*	Card Style Pattern (Service Cards)
+/* Layout tweaks                                                              */
 /* -------------------------------------------------------------------------- */
 
-.agile-card {
-  background: var(--wp--preset--color--white);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: var(--wp--preset--shadow--card);
-  border-top: 4px solid transparent;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+/* We let WordPress handle vertical block gaps.
+   DO NOT zero-out the first child margin, otherwise the hero sticks to header. */
 
-.agile-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--wp--preset--shadow--card-hover);
-  border-top-color: var(--wp--preset--color--agile-vibrant);
-  z-index: 10;
-}
-
-.agile-card h3 {
-  transition: color 0.3s ease;
-}
-
-.agile-card:hover h3 {
-  color: var(--wp--preset--color--agile-primary) !important;
-}
-
-/* -------------------------------------------------------------------------- */
-/*	Text Slider Animation (Pure CSS) – optional alternative to topics row
-/* -------------------------------------------------------------------------- */
-
-.agile-text-slider {
-  display: inline-block;
-  height: 1.1em;
-  overflow: hidden;
-  vertical-align: bottom;
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-}
-
-.agile-text-slider-content {
-  display: block;
-  animation: agileSlideVertical 12s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
-}
-
-.agile-text-slider-item {
-  display: block;
-  height: 1.1em;
-  color: var(--wp--preset--color--agile-vibrant);
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-@keyframes agileSlideVertical {
-  0%, 20%   { transform: translateY(0); }
-  25%, 45%  { transform: translateY(-1.1em); }
-  50%, 70%  { transform: translateY(-2.2em); }
-  75%, 95%  { transform: translateY(-3.3em); }
-  100%      { transform: translateY(0); } 
-}
-
-/* -------------------------------------------------------------------------- */
-/*	PLUGIN COMPATIBILITY
-/* -------------------------------------------------------------------------- */
-
-/* Contact Form 7 & General Inputs */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
-textarea,
-select {
-  padding: 12px 16px;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-  font-family: var(--wp--preset--font-family--body);
-  width: 100%;
-  background-color: #ffffff;
-  transition: border-color 0.2s ease;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  border-color: var(--wp--preset--color--agile-primary);
-  box-shadow: 0 0 0 3px rgba(5, 126, 181, 0.1);
-}
-
-/* WooCommerce Buttons Override */
-.woocommerce button.button,
-.woocommerce a.button,
-.woocommerce input.button {
-  background-color: var(--wp--preset--color--agile-primary) !important;
-  color: #ffffff !important;
-  border-radius: 4px !important;
-  padding: 12px 24px !important;
-  font-weight: 600 !important;
-  border: none !important;
-}
-
-.woocommerce button.button:hover,
-.woocommerce a.button:hover {
-  background-color: var(--wp--preset--color--agile-vibrant) !important;
-}
-
-/* Elementor Fixes */
-.elementor-section.elementor-section-boxed > .elementor-container {
-  max-width: var(--wp--style--global--content-size);
-}
-
-/* -------------------------------------------------------------------------- */
-/*  Layout tweaks
-/* -------------------------------------------------------------------------- */
-
-/* We do NOT zero out the first-child margin anymore – let WP handle block gaps */
-/* If you ever re-add those rules, they will remove the breathing room below header */
-/*
-body .wp-site-blocks > *:first-child {
-  margin-top: 0 !important;
-}
-body .wp-site-blocks > .wp-block-template-part + * {
-  margin-top: 0 !important;
-}
-*/
-
-/* Full-width sections inside main: horizontal padding + center wide content */
+/* Full-width sections in main: add side padding & keep wide content centered */
 main.site-main > .wp-block-group.alignfull {
   padding-left: var(--wp--preset--spacing--40);
   padding-right: var(--wp--preset--spacing--40);
@@ -196,26 +65,27 @@ main.site-main > .wp-block-group.alignfull .alignwide {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Logo and Header Nav
+/* Header + Navigation                                                        */
 /* -------------------------------------------------------------------------- */
 
-.agile611-logo {
-  display: block;
-  width: 180px;     /* adjust as needed */
-  height: 40px;     /* adjust as needed */
-
-  /* Hide the text visually but keep it for accessibility/SEO */
-  text-indent: -9999px;
-  white-space: nowrap;
-  overflow: hidden;
-
-  background-image: url("https://www.agile611.com/wp-content/uploads/2020/09/cropped-logo-header.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: contain;
+.site-header {
+  padding: 1rem var(--wp--preset--spacing--40);
+  background-color: var(--wp--preset--color--agile-deep);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Logo in header */
+.site-header__inner {
+  max-width: var(--wp--style--global--wide-size);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+
 .agile611-logo-link {
   display: inline-flex;
   align-items: center;
@@ -223,24 +93,15 @@ main.site-main > .wp-block-group.alignfull .alignwide {
 
 .agile611-logo-img {
   display: block;
-  height: 40px;      /* adjust as needed */
+  height: 40px;
   width: auto;
 }
 
-/* Main header nav wrapper */
+/* Classic menu wrapper */
+
 .agile611-main-nav {
   display: flex;
   align-items: center;
-  font-weight: 600;
-}
-
-.agile611-main-nav a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-.agile611-main-nav a:hover {
-  text-decoration: underline;
 }
 
 .agile611-main-nav__list {
@@ -251,31 +112,34 @@ main.site-main > .wp-block-group.alignfull .alignwide {
   padding: 0;
 }
 
-.agile611-main-nav__list a {
+.agile611-main-nav a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
+  font-size: 0.95rem;
 }
 
-.agile611-main-nav__list a:hover {
+.agile611-main-nav a:hover {
   text-decoration: underline;
 }
 
-/* -------------------------------------------------------------------------- */
-/*  Navigation: hide sibling submenus (classic menu markup)
-/* -------------------------------------------------------------------------- */
+/* Dropdowns – classic WP menu (.sub-menu, .menu-item-has-children) */
 
-/* Hide ALL submenus by default */
+.agile611-main-nav li {
+  position: relative;
+}
+
+/* Hide all submenus by default */
 .agile611-main-nav .sub-menu {
   display: none;
 }
 
-/* Show submenu when parent is hovered */
+/* Show on hover */
 .agile611-main-nav .menu-item-has-children:hover > .sub-menu {
   display: block;
 }
 
-/* Show submenu for the current branch so current path stays open */
+/* Keep current branch open */
 .agile611-main-nav .current-menu-item > .sub-menu,
 .agile611-main-nav .current-menu-ancestor > .sub-menu,
 .agile611-main-nav .current-menu-parent > .sub-menu,
@@ -284,11 +148,7 @@ main.site-main > .wp-block-group.alignfull .alignwide {
   display: block;
 }
 
-/* Dropdown positioning and appearance */
-.agile611-main-nav li {
-  position: relative;
-}
-
+/* Dropdown positioning */
 .agile611-main-nav .sub-menu {
   position: absolute;
   top: 100%;
@@ -309,26 +169,27 @@ main.site-main > .wp-block-group.alignfull .alignwide {
 
 .agile611-main-nav .sub-menu a {
   color: #ffffff;
-  text-decoration: none;
-  white-space: normal;
   font-weight: 500;
 }
 
-.agile611-main-nav .sub-menu a:hover {
-  text-decoration: underline;
-}
-
-/* Optional: nested submenus flyout to the right */
+/* Nested fly-out */
 .agile611-main-nav .sub-menu .sub-menu {
   top: 0;
   left: 100%;
 }
 
+/* Header CTA button */
+.site-header__cta .wp-block-button__link {
+  background-color: var(--wp--preset--color--agile-vibrant);
+  color: #ffffff;
+}
+
 /* -------------------------------------------------------------------------- */
-/*  Hero-specific styling (front page)
+/* Hero section                                                               */
 /* -------------------------------------------------------------------------- */
 
-/* “AGILE TRANSFORMATION” pill label */
+/* Label pill */
+
 .hero-label {
   display: inline-flex;
   align-items: center;
@@ -350,7 +211,8 @@ main.site-main > .wp-block-group.alignfull .alignwide {
   background-color: #00B2E9;
 }
 
-/* Topics row under hero (DevOps & Cloud · Agile Coaching · Ciberseguridad) */
+/* Topics row */
+
 .hero-topics {
   margin-top: 1.5rem;
 }
@@ -359,7 +221,7 @@ main.site-main > .wp-block-group.alignfull .alignwide {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: rgba(156, 163, 175, 1); /* gray-400 */
+  color: rgba(156, 163, 175, 1);
   font-size: 0.95rem;
 }
 
@@ -371,29 +233,77 @@ main.site-main > .wp-block-group.alignfull .alignwide {
   background: rgba(156, 163, 175, 0.85);
 }
 
-/* Terminal card on the right */
+/* Terminal card */
+
 .hero-terminal {
   border-radius: 16px;
   background: radial-gradient(circle at top left, #112240 0%, #020c1b 60%, #000000 100%);
-  box-shadow: 0 24px 45px rgba(0,0,0,0.55);
+  box-shadow: 0 24px 45px rgba(0, 0, 0, 0.55);
   overflow: hidden;
 }
 
-/* Fine‑tune text inside terminal body (the padding:1.5rem group) */
 .hero-terminal .wp-block-group[style*="padding:1.5rem"] {
   font-size: 0.95rem;
 }
 
-/* Ensure terminal header dots are tight */
-.hero-terminal .wp-block-group.has-background {
-  box-shadow: none;
+/* -------------------------------------------------------------------------- */
+/* Service cards                                                              */
+/* -------------------------------------------------------------------------- */
+
+.agile-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--wp--preset--shadow--card, 0 4px 6px rgba(0,0,0,0.08));
+  border-top: 4px solid transparent;
+  transition: all 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.agile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--wp--preset--shadow--card-hover, 0 18px 30px rgba(0,0,0,0.12));
+  border-top-color: var(--wp--preset--color--agile-vibrant);
+}
+
+.agile-card h3 {
+  margin-top: 0;
 }
 
 /* -------------------------------------------------------------------------- */
-/*  (Optional) DEBUG – enable temporarily only
+/* Footer                                                                     */
 /* -------------------------------------------------------------------------- */
-/*
-body {
-  outline: 4px solid red !important;
+
+.site-footer {
+  padding: var(--wp--preset--spacing--80) var(--wp--preset--spacing--40) var(--wp--preset--spacing--40);
+  background-color: var(--wp--preset--color--agile-deep);
+  color: #ffffff;
 }
-*/
+
+.site-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer__columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.site-footer__col {
+  flex: 1 1 25%;
+}
+
+.site-footer__col:first-child {
+  flex-basis: 50%;
+}
+
+.site-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #9ca3af;
+}
