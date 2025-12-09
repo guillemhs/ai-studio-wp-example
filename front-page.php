@@ -15,6 +15,8 @@ get_header();
   <div class="wp-block-group alignfull has-background" style="background-color:#01003f;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
     <!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
     <div class="wp-block-columns alignwide are-vertically-aligned-center">
+
+      <!-- LEFT COLUMN: text + buttons + topics -->
       <!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
       <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%">
 
@@ -73,11 +75,11 @@ get_header();
       </div>
       <!-- /wp:column -->
 
+      <!-- RIGHT COLUMN: terminal card -->
       <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
       <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%">
 
         <!-- TERMINAL CARD BLOCK START -->
-        <!-- Add hero-terminal class via "Additional CSS class(es)" -->
         <!-- wp:group {"style":{"border":{"radius":"12px","width":"1px","style":"solid","color":"#ffffff20"},"spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}},"color":{"background":"#0a192fcc"}},"layout":{"type":"default"},"className":"hero-terminal"} -->
         <div class="wp-block-group hero-terminal has-background" style="background-color:#0a192fcc;border-radius:12px;border-color:#ffffff20;border-width:1px;border-style:solid;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
             
@@ -136,6 +138,7 @@ get_header();
 
       </div>
       <!-- /wp:column -->
+
     </div>
     <!-- /wp:columns -->
   </div>
