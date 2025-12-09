@@ -144,3 +144,19 @@ input:focus, textarea:focus, select:focus {
 .elementor-section.elementor-section-boxed > .elementor-container {
     max-width: var(--wp--style--global--content-size);
 }
+
+/* -------------------------------------------------------------------------- */
+/*  Layout tweak: remove gap under top bar
+/* -------------------------------------------------------------------------- */
+
+/* In block themes, the first block after the header often has a default top margin.
+   We reset it so the hero/first section touches the top bar. */
+
+body .wp-site-blocks > *:first-child {
+  margin-top: 0 !important;
+}
+
+/* If your header is a template part, make sure the next block has no extra top margin */
+body .wp-site-blocks > .wp-block-template-part + * {
+  margin-top: 0 !important;
+}
