@@ -1,75 +1,61 @@
-<!-- wp:group {"tagName":"footer","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"backgroundColor":"agile-deep","textColor":"white","layout":{"type":"constrained"}} -->
-<footer class="wp-block-group alignfull has-white-color has-agile-deep-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
+<?php
+/**
+ * Footer template
+ * @package AI_Studio_WP_Example
+ */
+?>
 
-  <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":"4rem"}}} -->
-  <div class="wp-block-columns alignwide">
+<footer class="site-footer alignfull has-agile-deep-background-color has-white-color has-text-color has-background" style="padding:var(--wp--preset--spacing--80) var(--wp--preset--spacing--40) var(--wp--preset--spacing--40);">
+  <div class="site-footer__inner container" style="max-width:1200px;margin:0 auto;">
 
-    <!-- wp:column {"width":"50%"} -->
-    <div class="wp-block-column" style="flex-basis:50%">
-      <!-- wp:site-title {"level":3,"style":{"typography":{"fontSize":"2rem"}}} /-->
+    <div class="site-footer__columns" style="display:flex;flex-wrap:wrap;gap:4rem;">
+      <!-- Column 1 -->
+      <div class="site-footer__col" style="flex:1 1 50%;">
+        <h3 style="font-size:2rem;margin:0 0 0.75rem;"><?php bloginfo('name'); ?></h3>
+        <p style="color:#9ca3af;margin:0;">
+          Transformamos organizaciones potenciando su talento humano y asegurando su infraestructura tecnológica.
+        </p>
+      </div>
 
-      <!-- wp:paragraph {"style":{"color":{"text":"#9ca3af"}}} -->
-      <p style="color:#9ca3af">
-        Transformamos organizaciones potenciando su talento humano y asegurando su infraestructura tecnológica.
-      </p>
-      <!-- /wp:paragraph -->
+      <!-- Column 2 -->
+      <div class="site-footer__col" style="flex:1 1 25%;">
+        <h4 style="font-size:1.2rem;color:var(--wp--preset--color--agile-turq);margin:0 0 0.75rem;">Servicios</h4>
+        <ul style="color:#9ca3af;list-style:none;padding:0;margin:0;">
+          <li>Formación Ágil</li>
+          <li>Consultoría</li>
+          <li>DevOps</li>
+          <li>Ciberseguridad</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="site-footer__col" style="flex:1 1 25%;">
+        <h4 style="font-size:1.2rem;color:var(--wp--preset--color--agile-turq);margin:0 0 0.75rem;">Contacto</h4>
+        <ul style="color:#9ca3af;list-style:none;padding:0;margin:0;">
+          <li>contacto@agile611.com</li>
+          <li>Madrid, España</li>
+        </ul>
+      </div>
     </div>
-    <!-- /wp:column -->
 
-    <!-- wp:column {"width":"25%"} -->
-    <div class="wp-block-column" style="flex-basis:25%">
-      <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"1.2rem"}},"textColor":"agile-turq"} -->
-      <h4 class="wp-block-heading has-agile-turq-color has-text-color" style="font-size:1.2rem">Servicios</h4>
-      <!-- /wp:heading -->
+    <hr style="margin:var(--wp--preset--spacing--40) 0;border:0;height:1px;background:#ffffff20;">
 
-      <!-- wp:list {"style":{"color":{"text":"#9ca3af"}}} -->
-      <ul style="color:#9ca3af">
-        <li>Formación Ágil</li>
-        <li>Consultoría</li>
-        <li>DevOps</li>
-        <li>Ciberseguridad</li>
-      </ul>
-      <!-- /wp:list -->
-    </div>
-    <!-- /wp:column -->
+    <p class="has-text-align-center has-small-font-size" style="color:#9ca3af;text-align:center;margin:0 0 0.5rem;">
+      <?php
+      $curYear = date('Y');
+      echo " &copy; Copyright 2019-$curYear Agile611 &#124; Todos los derechos reservados.";
+      ?>
+    </p>
 
-    <!-- wp:column {"width":"25%"} -->
-    <div class="wp-block-column" style="flex-basis:25%">
-      <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"1.2rem"}},"textColor":"agile-turq"} -->
-      <h4 class="wp-block-heading has-agile-turq-color has-text-color" style="font-size:1.2rem">Contacto</h4>
-      <!-- /wp:heading -->
-
-      <!-- wp:list {"style":{"color":{"text":"#9ca3af"}}} -->
-      <ul style="color:#9ca3af">
-        <li>contacto@agile611.com</li>
-        <li>Madrid, España</li>
-      </ul>
-      <!-- /wp:list -->
-    </div>
-    <!-- /wp:column -->
-
+    <p class="has-text-align-center has-small-font-size" style="color:#9ca3af;text-align:center;margin:0;">
+      Orgullosamente funcionando con
+      <a href="https://www.debian.org/">
+        <img src="https://www.debian.org/logos/button-mini.png" alt="Debian">
+      </a>
+    </p>
   </div>
-  <!-- /wp:columns -->
-
-  <!-- wp:separator {"className":"is-style-wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}},"color":{"background":"#ffffff20"}}} -->
-  <hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-wide" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40);background-color:#ffffff20" />
-  <!-- /wp:separator -->
-
-  <!-- wp:paragraph {"align":"center","fontSize":"small","style":{"color":{"text":"#9ca3af"}}} -->
-<p class="has-text-align-center has-small-font-size" style="color:#9ca3af">
-  &copy; Copyright 2019-[agile611_year] Agile611 &#124; Todos los derechos reservados.
-</p>
-<!-- /wp:paragraph -->
-
-
-  <!-- wp:paragraph {"align":"center","fontSize":"small","style":{"color":{"text":"#9ca3af"}}} -->
-  <p class="has-text-align-center has-small-font-size" style="color:#9ca3af">
-    Orgullosamente funcionando con
-    <a href="https://www.debian.org/">
-      <img src="https://www.debian.org/logos/button-mini.png" alt="Debian" />
-    </a>
-  </p>
-  <!-- /wp:paragraph -->
-
 </footer>
-<!-- /wp:group -->
+
+<?php wp_footer(); ?>
+</body>
+</html>
