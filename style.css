@@ -751,3 +751,88 @@ body.archive {
   color: var(--wp--preset--color--agile-deep, #020617);
   margin-bottom: 0.25rem;
 }
+
+/* ===== Blog pagination ===== */
+
+.pagination {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;           /* center the nav */
+}
+
+/* The <nav> wrapper */
+.navigation.pagination {
+  display: inline-flex;         /* shrink to content so centering works nicely */
+}
+
+/* Container for page links */
+.navigation.pagination .nav-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Generic page number style */
+.navigation.pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--wp--preset--font-family--heading, "Nunito", system-ui);
+  text-decoration: none;
+  color: #4b5563;
+  background: #e5e7eb;
+  transition:
+    background-color 0.15s ease-out,
+    color 0.15s ease-out,
+    border-color 0.15s ease-out,
+    transform 0.12s ease-out;
+}
+
+/* Hover state for normal links */
+.navigation.pagination a.page-numbers:hover {
+  background: var(--wp--preset--color--agile-turq, #22c7d8);
+  color: #ffffff;
+  border-color: var(--wp--preset--color--agile-turq, #22c7d8);
+  transform: translateY(-1px);
+}
+
+/* Active / current page */
+.navigation.pagination .page-numbers.current {
+  background: var(--wp--preset--color--agile-vibrant, #4f46e5);
+  color: #ffffff;
+  border-color: var(--wp--preset--color--agile-vibrant, #4f46e5);
+  cursor: default;
+}
+
+/* Dots (…) */
+.navigation.pagination .page-numbers.dots {
+  background: transparent;
+  border-color: transparent;
+  color: #9ca3af;
+  padding: 0;
+  min-width: auto;
+}
+
+/* Prev/Next buttons – give them more weight */
+.navigation.pagination .page-numbers.prev,
+.navigation.pagination .page-numbers.next {
+  padding: 0 0.9rem;
+  background: #ffffff;
+  border-color: #d1d5db;
+  color: var(--wp--preset--color--agile-deep, #111827);
+}
+
+.navigation.pagination .page-numbers.prev:hover,
+.navigation.pagination .page-numbers.next:hover {
+  background: var(--wp--preset--color--agile-deep, #111827);
+  color: #ffffff;
+  border-color: var(--wp--preset--color--agile-deep, #111827);
+}
