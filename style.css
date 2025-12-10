@@ -227,6 +227,126 @@ body.single main .alignwide {
   border-radius: 999px;
 }
 
+/* ===== Header: tablet tweaks (<= 1024px) ===== */
+@media (max-width: 1024px) {
+  .site-header {
+    padding: 0.9rem 1.5rem;
+  }
+
+  .site-header__inner {
+    gap: 1rem;
+  }
+
+  .agile611-logo-img,
+  .site-header .agile611-logo-img {
+    max-width: 140px;
+  }
+
+  .agile611-main-nav__list {
+    gap: 1.2rem;
+  }
+
+  .agile611-main-nav a {
+    font-size: 0.9rem;
+  }
+
+  .site-header__cta .wp-element-button,
+  .site-header__cta .wp-block-button__link {
+    padding: 0.45rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Header: mobile layout (<= 768px) ===== */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Turn the inner header into a small grid:
+     [logo] [toggle] [CTA] on the first row */
+  .site-header__inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    row-gap: 0.75rem;
+  }
+
+  .site-header__logo {
+    grid-column: 1 / 2;
+  }
+
+  .site-header__cta {
+    grid-column: 3 / 4;
+  }
+
+  /* Hamburger toggle button */
+  .site-header__toggle {
+    grid-column: 2 / 3;
+    justify-self: end;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .site-header__toggle-bar {
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 999px;
+    transition: transform 0.18s ease-out, opacity 0.18s ease-out;
+  }
+
+  /* Hide nav by default on mobile */
+  .agile611-main-nav {
+    grid-column: 1 / 4;     /* full width under the first row */
+    grid-row: 2 / 3;
+    width: 100%;
+    margin-top: 0.5rem;
+    display: none;
+  }
+
+  .agile611-main-nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .agile611-main-nav a {
+    padding: 0.25rem 0;
+    width: 100%;
+  }
+
+  /* Smaller CTA on mobile */
+  .site-header__cta .wp-element-button,
+  .site-header__cta .wp-block-button__link {
+    padding: 0.35rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  /* When menu is open (class on <body>) */
+  body.menu-open .agile611-main-nav {
+    display: block;
+  }
+
+  /* Hamburger → "X" animation when open */
+  body.menu-open .site-header__toggle-bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  body.menu-open .site-header__toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  body.menu-open .site-header__toggle-bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
 /* -------------------------------------------------------------------------- */
 /* HERO SECTION                                                               */
 /* -------------------------------------------------------------------------- */
