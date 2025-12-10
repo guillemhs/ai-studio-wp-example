@@ -489,3 +489,21 @@ body.single .wp-block-post-author {
 .archive .site-hero__inner {
   display: none !important;
 }
+
+/* Link under calendar – styled like white calendar links */
+.courses-link-under-calendar {
+  margin-top: 1rem;
+  text-align: right;               /* or left/center if you prefer */
+}
+
+.courses-link-under-calendar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.courses-link-under-calendar a:hover,
+.courses-link-under-calendar a:focus {
+  color: rgba(255, 255, 255, 0.85); /* subtle hover */
+  text-decoration: underline;
+}
