@@ -1283,4 +1283,22 @@ body.woocommerce-cart .woocommerce .button:focus-visible {
   outline: 2px solid var(--wp--preset--color--agile-turq);
   outline-offset: 3px;
 }
+
 /* -------------------------------------------------------------------------- */
+/* Events Calendar Template – use Nunito instead of Monda / Open Sans        */
+/* -------------------------------------------------------------------------- */
+
+#ect-events-list-content h2.ect-list-title,
+#ect-events-list-content h2.ect-list-title a.ect-event-url,
+#ect-events-list-content .ect-event-content,
+#ect-events-list-content .ect-event-content p,
+#ect-events-list-content .ect-list-venue .ect-icon,
+#ect-events-list-content .ect-list-venue .ect-venue-details,
+#ect-events-list-content .ect-list-venue .ect-venue-details span,
+#ect-events-list-content .ect-list-venue .ect-venue-details .ect-google a,
+#ect-events-list-content .ect-rate-area,
+#ect-events-list-content .ect-events-read-more,
+#ect-events-list-content .ect-events-read-more span {
+  font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif !important;
+}
