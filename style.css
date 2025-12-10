@@ -1133,12 +1133,44 @@ body.archive {
 }
 
 /* -------------------------------------------------------------------------- */
-/* WooCommerce: Single product – Agile611 visual styling                      */
+/* WooCommerce: Global tweaks                                                 */
 /* -------------------------------------------------------------------------- */
 
-body.woocommerce.single-product main.site-main {
+/* Ensure Woo elements use Agile611 font + color */
+body.woocommerce,
+body.woocommerce-page {
+  font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--wp--preset--color--agile-text);
+}
+
+/* Main padding for Woo pages */
+body.woocommerce main.site-main,
+body.woocommerce-page main.site-main {
   padding-top: var(--wp--preset--spacing--60, 2.25rem);
   padding-bottom: var(--wp--preset--spacing--80, 5rem);
+}
+
+/* -------------------------------------------------------------------------- */
+/* WooCommerce: Single product layout                                         */
+/* -------------------------------------------------------------------------- */
+
+/* Main product area: 2-column layout (image + summary) */
+body.woocommerce.single-product .woocommerce .single-product {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* left column image, right column summary */
+  column-gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* Keep Woo’s internal layout, only adjust spacing */
+body.woocommerce.single-product .woocommerce div.product div.images {
+  margin-bottom: 0;
+}
+
+body.woocommerce.single-product .woocommerce div.product div.summary {
+  margin-bottom: 0;
 }
 
 /* Page title */
@@ -1147,16 +1179,22 @@ body.woocommerce.single-product .page-header h1.entry-title {
   font-weight: 800;
   color: var(--wp--preset--color--agile-deep);
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
-/* Product gallery container – keep WooCommerce layout, just style box */
+/* Product container spacing */
+body.woocommerce.single-product .entry-content .woocommerce {
+  margin-top: 2rem;
+}
+
+/* Product gallery box */
 body.woocommerce.single-product .woocommerce-product-gallery {
   background: #f3f4f6;
   padding: 1.5rem;
   border-radius: 12px;
 }
 
-/* Summary card */
+/* Summary card (price, button, meta) */
 body.woocommerce.single-product .summary.entry-summary {
   background: #ffffff;
   border-radius: 16px;
@@ -1172,7 +1210,16 @@ body.woocommerce.single-product .price {
   margin-bottom: 1.5rem;
 }
 
-/* Quantity */
+/* Quantity + Add to cart alignment */
+body.woocommerce.single-product .cart {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Quantity field */
 body.woocommerce.single-product .cart .quantity .input-text.qty {
   width: 80px;
   padding: 0.4rem 0.5rem;
@@ -1181,7 +1228,7 @@ body.woocommerce.single-product .cart .quantity .input-text.qty {
   font-size: 0.95rem;
 }
 
-/* Add to cart button – match Agile611 buttons */
+/* Add to cart button – match Agile611 style */
 body.woocommerce.single-product .single_add_to_cart_button.button {
   border-radius: 999px;
   background: var(--wp--preset--color--agile-vibrant);
@@ -1210,19 +1257,35 @@ body.woocommerce.single-product .product_meta a {
   text-decoration: none;
 }
 
-/* Related products section */
+/* -------------------------------------------------------------------------- */
+/* WooCommerce: Related products                                              */
+/* -------------------------------------------------------------------------- */
+
 body.woocommerce.single-product .related.products {
   margin-top: 3rem;
 }
 
+/* Related title */
 body.woocommerce.single-product .related.products > h2 {
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--wp--preset--color--agile-deep);
   margin-bottom: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Related product cards – do NOT change display/grid model */
+/* 4-column grid on desktop */
+body.woocommerce.single-product .related.products ul.products {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* Related product cards (do NOT change display type of li) */
 body.woocommerce.single-product .related.products ul.products li.product {
   background: #ffffff;
   border-radius: 16px;
@@ -1230,9 +1293,32 @@ body.woocommerce.single-product .related.products ul.products li.product {
   padding: 1rem;
 }
 
+/* Related product title */
 body.woocommerce.single-product .related.products ul.products li.product h2.woocommerce-loop-product__title {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--wp--preset--color--agile-deep);
   margin: 0.75rem 0 0.5rem;
+}
+
+/* Responsive breakpoints for related grid */
+@media (max-width: 1024px) {
+  body.woocommerce.single-product .woocommerce .single-product {
+    grid-template-columns: 1fr; /* stack image + summary */
+    row-gap: 2rem;
+  }
+
+  body.woocommerce.single-product .related.products ul.products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  body.woocommerce.single-product .related.products ul.products {
+    grid-template-columns: 1fr;
+  }
+
+  body.woocommerce.single-product .summary.entry-summary {
+    padding: 1.4rem 1.25rem;
+  }
 }
