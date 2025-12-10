@@ -1307,3 +1307,29 @@ body.woocommerce-cart .woocommerce .button:focus-visible {
 #ect-events-list-content .ect-rate-area {
   display: none !important;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Tickets checkout – center main content                                     */
+/* -------------------------------------------------------------------------- */
+
+/* Limit width and center the whole tickets checkout block */
+body.page-id-19180 .tribe-tickets__commerce-checkout {
+  max-width: 760px;        /* tweak to taste: 680–900px depending on density */
+  margin: 0 auto;          /* centers horizontally */
+}
+
+/* Make the “Comprar Entradas” button span full width of this centered column */
+body.page-id-19180
+  .tribe-tickets__commerce-checkout-form-submit-button,
+body.page-id-19180
+  .tribe-tickets__commerce-checkout-paypal-advanced-payments-form-submit-button {
+  width: 100%;
+}
+
+/* Slightly tighten the main column padding on large screens so it feels centered */
+@media (min-width: 960px) {
+  body.page-id-19180 main#primary .wp-block-group.alignwide {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
