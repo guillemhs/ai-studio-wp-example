@@ -454,3 +454,12 @@ body.single main time {
   display: none !important;
 }
 */
+
+/* -------------------------------------------------------------------------- */
+/* Hero tagline tweaks                                                        */
+/* -------------------------------------------------------------------------- */
+
+/* Hide the global hero tagline under the main site title */
+.site-hero__tagline {
+  display: none !important;
+}
