@@ -682,3 +682,8 @@ body.single footer.entry-footer,
 #ect-events-list-content .ect-rate-area {
   display: none !important;
 }
+
+/* Hide hero only on single event pages */
+.single-tribe_events .site-hero {
+  display: none !important;
+}
