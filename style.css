@@ -421,3 +421,28 @@ body.single main .wp-block-post-content {
     margin-top: 2rem;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/* Page template tweaks                                                       */
+/* -------------------------------------------------------------------------- */
+
+/* Hide the main page title for standard pages (page.php) */
+body.page main h1,
+body.page main .wp-block-post-title,
+body.page.page-template-default main .wp-block-post-title {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Post meta tweaks                                                           */
+/* -------------------------------------------------------------------------- */
+
+/* Hide "Posted on …" date line under posts */
+.entry-meta,
+.post-meta,
+.posted-on,
+.wp-block-post-date,
+.posted-on,
+.entry-date {
+  display: none !important;
+}
