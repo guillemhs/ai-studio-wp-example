@@ -708,4 +708,23 @@ body.single footer.entry-footer,
   max-width: 100%;
   height: auto;
 }
-/* -------------------------------------------------------------------------- */
+
+/* Center the main content column on pages and single posts/events */
+.site-main .content-list {
+  max-width: 960px;        /* or 1100px, whatever width you want for the column */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make sure inner content doesn’t stretch wider than this */
+.site-main .content-list .entry,
+.site-main .content-list .entry-content {
+  max-width: 100%;
+}
+
+/* Keep all content images inside the column */
+.site-main .entry-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
