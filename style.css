@@ -687,3 +687,25 @@ body.single footer.entry-footer,
 .single-tribe_events .site-hero {
   display: none !important;
 }
+
+/* Keep page content images inside the main text column */
+.entry-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Center Gutenberg "aligncenter" figures and keep them in column */
+.entry-content .wp-block-image.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* If any heading contains an image (like your clientes image),
+   make sure it also respects the column width */
+.entry-content h2 img,
+.entry-content h3 img {
+  max-width: 100%;
+  height: auto;
+}
+/* -------------------------------------------------------------------------- */
