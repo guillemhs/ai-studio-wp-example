@@ -1151,20 +1151,24 @@ body.woocommerce-page main.site-main {
 }
 
 /* -------------------------------------------------------------------------- */
-/* WooCommerce: Single product layout                                         */
+/* WooCommerce – single product 2‑column layout                               */
 /* -------------------------------------------------------------------------- */
 
-/* Main product area: 2-column layout (image + summary) */
+/* Outer container for the product on single product pages */
 body.woocommerce.single-product .woocommerce .single-product {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto;                /* center in page */
+}
+
+/* Make the inner .product a 2‑column grid: gallery + summary */
+body.woocommerce.single-product .woocommerce .single-product > .product {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr; /* left column image, right column summary */
+  grid-template-columns: 1.1fr 0.9fr;  /* left: grey box (image), right: price box */
   column-gap: 2.5rem;
   align-items: flex-start;
 }
 
-/* Keep Woo’s internal layout, only adjust spacing */
+/* Remove extra bottom margins so the grid lines up nicely */
 body.woocommerce.single-product .woocommerce div.product div.images {
   margin-bottom: 0;
 }
@@ -1173,7 +1177,22 @@ body.woocommerce.single-product .woocommerce div.product div.summary {
   margin-bottom: 0;
 }
 
-/* Page title */
+/* Optional: style the gallery as a grey box (like your screenshot) */
+body.woocommerce.single-product .woocommerce-product-gallery {
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+/* Optional: style the price card */
+body.woocommerce.single-product .summary.entry-summary {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  padding: 1.8rem 2rem;
+}
+
+/* Title centered above the two columns */
 body.woocommerce.single-product .page-header h1.entry-title {
   font-size: 2rem;
   font-weight: 800;
@@ -1182,143 +1201,10 @@ body.woocommerce.single-product .page-header h1.entry-title {
   text-align: center;
 }
 
-/* Product container spacing */
-body.woocommerce.single-product .entry-content .woocommerce {
-  margin-top: 2rem;
-}
-
-/* Product gallery box */
-body.woocommerce.single-product .woocommerce-product-gallery {
-  background: #f3f4f6;
-  padding: 1.5rem;
-  border-radius: 12px;
-}
-
-/* Summary card (price, button, meta) */
-body.woocommerce.single-product .summary.entry-summary {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-  padding: 1.8rem 2rem;
-}
-
-/* Price */
-body.woocommerce.single-product .price {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--wp--preset--color--agile-primary);
-  margin-bottom: 1.5rem;
-}
-
-/* Quantity + Add to cart alignment */
-body.woocommerce.single-product .cart {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Quantity field */
-body.woocommerce.single-product .cart .quantity .input-text.qty {
-  width: 80px;
-  padding: 0.4rem 0.5rem;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  font-size: 0.95rem;
-}
-
-/* Add to cart button – match Agile611 style */
-body.woocommerce.single-product .single_add_to_cart_button.button {
-  border-radius: 999px;
-  background: var(--wp--preset--color--agile-vibrant);
-  color: #ffffff;
-  font-weight: 700;
-  border: none;
-  padding: 0.75rem 1.8rem;
-  cursor: pointer;
-  transition: all 0.18s ease-out;
-}
-
-body.woocommerce.single-product .single_add_to_cart_button.button:hover {
-  background: var(--wp--preset--color--agile-primary);
-  transform: translateY(-1px);
-}
-
-/* Product meta (SKU, categories) */
-body.woocommerce.single-product .product_meta {
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-top: 1rem;
-}
-
-body.woocommerce.single-product .product_meta a {
-  color: var(--wp--preset--color--agile-primary);
-  text-decoration: none;
-}
-
-/* -------------------------------------------------------------------------- */
-/* WooCommerce: Related products                                              */
-/* -------------------------------------------------------------------------- */
-
-body.woocommerce.single-product .related.products {
-  margin-top: 3rem;
-}
-
-/* Related title */
-body.woocommerce.single-product .related.products > h2 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--wp--preset--color--agile-deep);
-  margin-bottom: 1rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* 4-column grid on desktop */
-body.woocommerce.single-product .related.products ul.products {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
-}
-
-/* Related product cards (do NOT change display type of li) */
-body.woocommerce.single-product .related.products ul.products li.product {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  padding: 1rem;
-}
-
-/* Related product title */
-body.woocommerce.single-product .related.products ul.products li.product h2.woocommerce-loop-product__title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--wp--preset--color--agile-deep);
-  margin: 0.75rem 0 0.5rem;
-}
-
-/* Responsive breakpoints for related grid */
-@media (max-width: 1024px) {
-  body.woocommerce.single-product .woocommerce .single-product {
-    grid-template-columns: 1fr; /* stack image + summary */
+/* Responsive: stack the two columns on smaller screens */
+@media (max-width: 900px) {
+  body.woocommerce.single-product .woocommerce .single-product > .product {
+    grid-template-columns: 1fr;   /* one column */
     row-gap: 2rem;
-  }
-
-  body.woocommerce.single-product .related.products ul.products {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  body.woocommerce.single-product .related.products ul.products {
-    grid-template-columns: 1fr;
-  }
-
-  body.woocommerce.single-product .summary.entry-summary {
-    padding: 1.4rem 1.25rem;
   }
 }
