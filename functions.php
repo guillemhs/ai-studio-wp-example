@@ -45,8 +45,19 @@ add_filter( 'the_content', 'do_shortcode' );
 function agile611_register_menus() {
     register_nav_menus(
         array(
-            'primary' => __('Primary Menu', 'ai-studio-wp-example'),
+            'primary' => __( 'Primary Menu', 'agile611' ),
+            'menu-2'  => __( 'Footer Menu', 'agile611' ),
         )
     );
 }
-add_action('after_setup_theme', 'agile611_register_menus');
+add_action( 'after_setup_theme', 'agile611_register_menus' );
+
+function agile611_enqueue_icons() {
+    wp_enqueue_style(
+        'font-awesome',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
+        array(),
+        '4.7.0'
+    );
+}
+add_action( 'wp_enqueue_scripts', 'agile611_enqueue_icons' );
