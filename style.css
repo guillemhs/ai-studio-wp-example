@@ -605,3 +605,28 @@ body.single footer.entry-footer,
 .site-footer__nav a:hover {
   color: var(--wp--preset--color--agile-vibrant);
 }
+
+/* Footer columns layout */
+.site-footer__columns {
+  display: flex;
+  flex-wrap: wrap;             /* allow stacking on very small screens */
+  gap: 2rem;                   /* space between columns */
+}
+
+/* Desktop: 3 columns */
+.site-footer__col {
+  flex: 1 1 0;                 /* all share available width */
+  min-width: 0;                /* avoid unexpected overflow */
+}
+
+/* If first column is too wide, cap it */
+.site-footer__col:first-child {
+  flex: 2 1 0;                 /* make column 1 wider but not full width */
+}
+
+/* Optional: make columns stack on narrow screens */
+@media (max-width: 768px) {
+  .site-footer__col {
+    flex: 1 1 100%;
+  }
+}

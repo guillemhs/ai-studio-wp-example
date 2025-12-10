@@ -108,20 +108,6 @@
 
     <hr style="margin:var(--wp--preset--spacing--40) 0;border:0;height:1px;background:#ffffff20;">
 
-    <?php
-    // Footer navigation (menu-2)
-    if ( has_nav_menu( 'menu-2' ) ) {
-        wp_nav_menu( array(
-            'theme_location'  => 'menu-2',
-            'menu_id'         => 'footer-menu',
-            'menu_class'      => 'site-footer__nav list-unstyled',
-            'container'       => 'nav',
-            'container_class' => 'site-footer__nav-container',
-            'depth'           => 1,
-        ) );
-    }
-    ?>
-
     <p style="color:#9ca3af;text-align:center;margin:0 0 0.5rem;">
       &copy; Copyright 2019-<?php echo date( 'Y' ); ?> Agile611 | Todos los derechos reservados.
     </p>
