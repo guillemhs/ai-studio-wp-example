@@ -12,10 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-<div style="background:#ffbf00;padding:6px 10px;margin:10px 0;color:#000;font-weight:bold;">
-  TEMPLATE: single-tribe_events.php
-</div>
-
 <main id="primary" class="site-main" role="main">
   <section class="content-list alignwide container mx-auto px-4">
     <?php

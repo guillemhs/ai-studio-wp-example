@@ -507,3 +507,8 @@ body.single .wp-block-post-author {
   color: rgba(255, 255, 255, 0.85); /* subtle hover */
   text-decoration: underline;
 }
+
+/* Hide the date line only on single Events Calendar pages */
+.single-tribe_events .text-sm.text-gray-500.mb-2 {
+  display: none;
+}
