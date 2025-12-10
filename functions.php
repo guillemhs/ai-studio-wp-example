@@ -130,3 +130,10 @@ add_theme_support( 'custom-logo', array(
   'flex-height' => true,
   'flex-width'  => true,
 ) );
+
+// Disable related products on single product pages
+add_filter( 'woocommerce_related_products_args', function( $args ) {
+    $args['posts_per_page'] = 0;
+    $args['columns']        = 0;
+    return $args;
+} );
