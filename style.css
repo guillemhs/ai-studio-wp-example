@@ -520,7 +520,7 @@ body.single footer.entry-footer,
 /* Event title link */
 #ect-minimal-list-wrp .style-2 .ect-event-title a,
 #ect-minimal-list-wrp .style-2 .ect-event-title a:visited {
-  color: var(--wp--preset--color--agile-vibrant);  /* Agile vibrant */
+  color: #ffffff;;  /* white */
   text-decoration: none;
 }
 
