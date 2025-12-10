@@ -31,6 +31,49 @@
       </a>
     </div>
 
+    <!-- Mobile hamburger toggle (used on tablets/phones, hidden by CSS on desktop) -->
+    <button class="site-header__toggle" aria-expanded="false" aria-controls="primary-menu">
+      <span class="site-header__toggle-bar"></span>
+      <span class="site-header__toggle-bar"></span>
+      <span class="site-header__toggle-bar"></span>
+      <span class="screen-reader-text">
+        <?php esc_html_e( 'Abrir menú', 'agile611' ); ?>
+      </span>
+    </button>
+
+    <!-- Navigation (same as your former header) -->
+    <nav class="agile611-main-nav" aria-label="<?php esc_attr_e( 'Primary Menu', 'agile611' ); ?>">
+      <?php
+      wp_nav_menu(
+        array(
+          'theme_location' => 'primary',
+          // keep your existing menu ID so it matches current menu assignment
+          'menu_id'        => 'primary-menu', // changed from "menu-menu_top_es" to work with aria-controls
+          'container'      => '',
+          'menu_class'     => 'agile611-main-nav__list',
+          'fallback_cb'    => false,
+        )
+      );
+      ?>
+    </nav>
+
+    <!-- Header button (your original "Empezar" link + classes) -->
+    <div class="site-header__cta">
+      <a href="/contacto/"
+         class="wp-block-button__link has-white-color has-agile-vibrant-background-color has-text-color has-background wp-element-button">
+        Empezar
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<header class="site-header alignfull has-agile-deep-background-color has-background">
+  <div class="site-header__inner">
+
+    <!-- Logo -->
+    <div class="site-header__logo">…</div>
+
     <!-- Mobile hamburger toggle -->
     <button class="site-header__toggle" aria-expanded="false" aria-controls="primary-menu">
       <span class="site-header__toggle-bar"></span>
@@ -63,15 +106,6 @@
     </div>
 
   </div>
-</header>
-
-<header class="site-header alignfull has-agile-deep-background-color has-background">
-  <div class="site-header__inner">
-
-    <!-- Logo -->
-    <div class="site-header__logo">…</div>
-
-
 </header>
 
 
