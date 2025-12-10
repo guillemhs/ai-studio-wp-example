@@ -5,13 +5,42 @@ Author: Your Name
 Author URI: https://agile611.com/
 Description: Custom theme for Agile611.
 Version: 1.0
+Text Domain: agile611
 */
+
+/* -------------------------------------------------------------------------- */
+/* Global Base                                                                */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  /* Safe fallbacks now that theme.json is gone */
+  --wp--preset--color--agile-bg: #ffffff;
+  --wp--preset--color--agile-text: #0f172a;
+  --wp--preset--color--agile-deep: #01003f;
+  --wp--preset--color--agile-vibrant: #00b2e9;
+  --wp--preset--color--agile-primary: #0489c0;
+  --wp--preset--color--agile-turq: #4cb8c9;
+
+  --wp--preset--spacing--40: 2rem;
+  --wp--preset--spacing--80: 5rem;
+
+  --wp--style--global--wide-size: 1200px;
+}
 
 body {
   background-color: var(--wp--preset--color--agile-bg);
   color: var(--wp--preset--color--agile-text);
   -webkit-font-smoothing: antialiased;
   margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Keep Gutenberg images inside content width */
+.entry-content img,
+.site-main .entry-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -30,66 +59,62 @@ body {
 
 /* Hero-style buttons: rectangular with soft corners */
 .wp-block-buttons .wp-block-button .wp-block-button__link {
-  border-radius: 8px;              /* was 999px (pill) */
+  border-radius: 8px;
   font-weight: 600;
-  padding-inline: 1.8rem;          /* slightly tighter padding */
+  padding-inline: 1.8rem;
   padding-block: 0.9rem;
   line-height: 1.2;
 }
 
-/* Outline secondary CTA: same size, just border instead of fill */
+/* Outline secondary CTA */
 .wp-block-button.is-style-outline .wp-block-button__link {
-  border-radius: 8px;              /* match primary */
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.8);
   background: transparent;
   color: #ffffff;
 }
 
-
 /* -------------------------------------------------------------------------- */
-/* Layout tweaks                                                              */
+/* Layout: main / content width                                               */
 /* -------------------------------------------------------------------------- */
 
-/* 1. Generic main container: horizontal padding on all pages */
 main.site-main,
 body.page main,
 body.single main {
-  padding-left: var(--wp--preset--spacing--40, 2rem);
-  padding-right: var(--wp--preset--spacing--40, 2rem);
+  padding-left: var(--wp--preset--spacing--40);
+  padding-right: var(--wp--preset--spacing--40);
 }
 
-/* 2. Inner groups / content: keep wide content centered */
 main.site-main > .wp-block-group.alignfull,
 body.page main > .wp-block-group.alignfull,
 body.single main > .wp-block-group.alignfull {
-  padding-left: 0;  /* avoid double padding */
+  padding-left: 0;
   padding-right: 0;
 }
 
-/* The inner .alignwide container should behave like your “wide” width */
 main.site-main .alignwide,
 body.page main .alignwide,
 body.single main .alignwide {
-  max-width: var(--wp--style--global--wide-size, 1200px);
+  max-width: var(--wp--style--global--wide-size);
   margin-left: auto;
   margin-right: auto;
 }
 
-/* As a fallback, constrain direct post content on pages too */
-body.page main .wp-block-post-content,
-body.single main .wp-block-post-content {
-  max-width: var(--wp--style--global--wide-size, 1200px);
+/* Center generic content lists */
+.site-main .content-list {
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* -------------------------------------------------------------------------- */
-/* Header + Navigation                                                        */
+/* HEADER + NAVIGATION                                                        */
 /* -------------------------------------------------------------------------- */
 
 .site-header {
-  padding: 1rem var(--wp--preset--spacing--40);
   background-color: var(--wp--preset--color--agile-deep);
+  color: #ffffff;
+  padding: 1rem var(--wp--preset--spacing--40);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -101,6 +126,7 @@ body.single main .wp-block-post-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
 }
 
 /* Logo */
@@ -110,10 +136,11 @@ body.single main .wp-block-post-content {
   align-items: center;
 }
 
-.agile611-logo-img {
+.agile611-logo-img,
+.site-header .agile611-logo-img {
   display: block;
-  height: 40px;
-  width: auto;
+  max-width: 160px;
+  height: auto;
 }
 
 /* Classic menu wrapper */
@@ -125,7 +152,7 @@ body.single main .wp-block-post-content {
 
 .agile611-main-nav__list {
   display: flex;
-  gap: 2rem;
+  gap: 1.6rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -148,27 +175,18 @@ body.single main .wp-block-post-content {
   position: relative;
 }
 
-/* Hide all submenus by default */
+/* Hide submenus by default */
 .agile611-main-nav .sub-menu {
   display: none;
 }
 
-/* Show submenu on hover or keyboard focus (top level and nested) */
+/* Show submenu on hover or keyboard focus */
 .agile611-main-nav .menu-item-has-children:hover > .sub-menu,
 .agile611-main-nav .menu-item-has-children:focus-within > .sub-menu {
   display: block;
 }
 
-/* IMPORTANT: do NOT keep current branch open */
-.agile611-main-nav .current-menu-item > .sub-menu,
-.agile611-main-nav .current-menu-ancestor > .sub-menu,
-.agile611-main-nav .current-menu-parent > .sub-menu,
-.agile611-main-nav .current_page_ancestor > .sub-menu,
-.agile611-main-nav .current_page_parent > .sub-menu {
-  display: none;   /* override any “always open” behavior */
-}
-
-/* Dropdown positioning */
+/* Position dropdown */
 .agile611-main-nav .sub-menu {
   position: absolute;
   top: 100%;
@@ -192,7 +210,7 @@ body.single main .wp-block-post-content {
   font-weight: 500;
 }
 
-/* Nested fly-out: positioned to the right of its parent item */
+/* Nested fly-out submenu */
 .agile611-main-nav .sub-menu .sub-menu {
   top: 0;
   left: 100%;
@@ -202,13 +220,12 @@ body.single main .wp-block-post-content {
 .site-header__cta .wp-block-button__link {
   background-color: var(--wp--preset--color--agile-vibrant);
   color: #ffffff;
+  border-radius: 999px;
 }
 
 /* -------------------------------------------------------------------------- */
-/* Hero section                                                               */
+/* HERO SECTION                                                               */
 /* -------------------------------------------------------------------------- */
-
-/* Label pill (used if you switch back to the pill instead of plain text) */
 
 .hero-label {
   display: inline-flex;
@@ -217,7 +234,7 @@ body.single main .wp-block-post-content {
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
   background: rgba(0, 178, 233, 0.12);
-  color: #00B2E9;
+  color: #00b2e9;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -228,10 +245,8 @@ body.single main .wp-block-post-content {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background-color: #00B2E9;
+  background-color: #00b2e9;
 }
-
-/* Topics row (if you use the static topics instead of slider) */
 
 .hero-topics {
   margin-top: 1.5rem;
@@ -241,7 +256,7 @@ body.single main .wp-block-post-content {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: rgba(156, 163, 175, 1);
+  color: #9ca3af;
   font-size: 0.95rem;
 }
 
@@ -262,13 +277,7 @@ body.single main .wp-block-post-content {
   overflow: hidden;
 }
 
-.hero-terminal .wp-block-group[style*="padding:1.5rem"] {
-  font-size: 0.95rem;
-}
-
-/* -------------------------------------------------------------------------- */
-/* macOS-style terminal dots                                                  */
-/* -------------------------------------------------------------------------- */
+/* macOS-style dots */
 
 .terminal-dots {
   display: inline-flex;
@@ -276,7 +285,6 @@ body.single main .wp-block-post-content {
   gap: 0.4rem;
 }
 
-/* Base circle */
 .terminal-dot {
   display: inline-block;
   width: 11px;
@@ -285,28 +293,24 @@ body.single main .wp-block-post-content {
   box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
 }
 
-/* Colors approximating macOS traffic lights */
-.terminal-dot--red {
-  background-color: #ff5f57;
-}
+.terminal-dot--red { background-color: #ff5f57; }
+.terminal-dot--yellow { background-color: #ffbd2e; }
+.terminal-dot--green { background-color: #28c840; }
 
-.terminal-dot--yellow {
-  background-color: #ffbd2e;
-}
-
-.terminal-dot--green {
-  background-color: #28c840;
+/* Ensure hero columns have a nice gap */
+.wp-block-columns.alignwide {
+  column-gap: 3rem;
 }
 
 /* -------------------------------------------------------------------------- */
-/* Service cards                                                              */
+/* SERVICE CARDS                                                              */
 /* -------------------------------------------------------------------------- */
 
 .agile-card {
   background: #ffffff;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: var(--wp--preset--shadow--card, 0 4px 6px rgba(0,0,0,0.08));
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
   border-top: 4px solid transparent;
   transition: all 0.25s ease;
   height: 100%;
@@ -316,7 +320,7 @@ body.single main .wp-block-post-content {
 
 .agile-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--wp--preset--shadow--card-hover, 0 18px 30px rgba(0,0,0,0.12));
+  box-shadow: 0 18px 30px rgba(0,0,0,0.12);
   border-top-color: var(--wp--preset--color--agile-vibrant);
 }
 
@@ -325,7 +329,7 @@ body.single main .wp-block-post-content {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Footer                                                                     */
+/* FOOTER                                                                     */
 /* -------------------------------------------------------------------------- */
 
 .site-footer {
@@ -342,15 +346,16 @@ body.single main .wp-block-post-content {
 .site-footer__columns {
   display: flex;
   flex-wrap: wrap;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .site-footer__col {
-  flex: 1 1 25%;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .site-footer__col:first-child {
-  flex-basis: 50%;
+  flex: 2 1 0;
 }
 
 .site-footer__col ul {
@@ -360,186 +365,8 @@ body.single main .wp-block-post-content {
   color: #9ca3af;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Text Slider Animation (Pure CSS)                                          */
-/* -------------------------------------------------------------------------- */
+/* Footer contact info */
 
-.agile-text-slider {
-  display: inline-block;
-  height: 1.1em;
-  overflow: hidden;
-  vertical-align: bottom;
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-}
-
-.agile-text-slider-content {
-  display: block;
-  animation: agileSlideVertical 12s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
-}
-
-.agile-text-slider-item {
-  display: block;
-  height: 1.1em;
-  color: var(--wp--preset--color--agile-vibrant);
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-@keyframes agileSlideVertical {
-  0%, 20%   { transform: translateY(0); }
-  25%, 45%  { transform: translateY(-1.1em); }
-  50%, 70%  { transform: translateY(-2.2em); }
-  75%, 95%  { transform: translateY(-3.3em); }
-  100%      { transform: translateY(0); } 
-}
-
-/* -------------------------------------------------------------------------- */
-/* HERO LAYOUT + TERMINAL COLUMN FIXES                                       */
-/* -------------------------------------------------------------------------- */
-
-/* Make hero columns have a clear gap even if theme.json doesn’t inject it */
-.wp-block-columns.alignwide {
-  display: flex;
-  column-gap: 3rem; /* matches blockGap in the hero markup */
-}
-
-/* Constrain the right hero column so the terminal clearly sits as column 2 */
-.hero-terminal-column {
-  max-width: 480px;
-  margin-left: auto;
-}
-
-/* On smaller screens, let the terminal take full width */
-@media (max-width: 900px) {
-  .hero-terminal-column {
-    max-width: 100%;
-    margin-left: 0;
-    margin-top: 2rem;
-  }
-}
-
-/* -------------------------------------------------------------------------- */
-/* Page template tweaks                                                       */
-/* -------------------------------------------------------------------------- */
-
-/* Hide the main page title for standard pages (page.php) */
-body.page main h1,
-body.page main .wp-block-post-title,
-body.page.page-template-default main .wp-block-post-title {
-  display: none;
-}
-
-/* -------------------------------------------------------------------------- */
-/* Post meta tweaks                                                           */
-/* -------------------------------------------------------------------------- */
-
-/* Hide "Posted on …" date line under single posts only */
-body.single .entry-meta,
-body.single .post-meta,
-body.single .posted-on,
-body.single .wp-block-post-date,
-body.single .wp-block-post-author,
-body.single time.posted-on,
-body.single .wp-block-post-date time {
-  display: none !important;
-}
-
-/* Optional, if it's still visible */
-/*
-body.single main time {
-  display: none !important;
-}
-*/
-
-/* -------------------------------------------------------------------------- */
-/* Hero tagline tweaks                                                        */
-/* -------------------------------------------------------------------------- */
-
-/* Hide the global hero tagline under the main site title */
-.site-hero__tagline {
-  display: none !important;
-}
-
-/* -------------------------------------------------------------------------- */
-/* Page.php hero tweaks                                                       */
-/* -------------------------------------------------------------------------- */
-
-/* Hide the hero section that page.php prints on all standard pages */
-body.page .site-hero {
-  display: none !important;
-}
-
-/* -------------------------------------------------------------------------- */
-/* Page.php meta footer tweaks                                                */
-/* -------------------------------------------------------------------------- */
-
-/* Hide "Posted on …" meta footer on all pages rendered by page.php */
-body.page .entry-footer {
-  display: none !important;
-}
-
-/* -------------------------------------------------------------------------- */
-/* Single post hero tweaks                                                    */
-/* -------------------------------------------------------------------------- */
-
-/* Remove the "Agile611" heading and tagline from the hero on single posts */
-body.single-post .site-hero__title,
-body.single-post .site-hero__tagline {
-  display: none !important;
-}
-
-/* -------------------------------------------------------------------------- */
-/* Single post meta footer                                                    */
-/* -------------------------------------------------------------------------- */
-
-/* Hide the "Posted on …" footer line on all single blog posts */
-body.single-post footer.entry-footer,
-body.single footer.entry-footer,
-.single-post .entry-footer,
-.single .entry-footer {
-  display: none !important;
-}
-
-/* -------------------------------------------------------------------------- */
-/* Header logo size                                                           */
-/* -------------------------------------------------------------------------- */
-
-.site-header .agile611-logo-img {
-  max-width: 160px;   /* same value as the footer logo */
-  height: auto;
-}
-
-/* -------------------------------------------------------------- */
-/* Events list colors (ECT minimal list inside hero terminal)     */
-/* -------------------------------------------------------------- */
-
-/* Event title link */
-#ect-minimal-list-wrp .style-2 .ect-event-title a,
-#ect-minimal-list-wrp .style-2 .ect-event-title a:visited {
-  color: #ffffff;;  /* white */
-  text-decoration: none;
-}
-
-#ect-minimal-list-wrp .style-2 .ect-event-title a:hover,
-#ect-minimal-list-wrp .style-2 .ect-event-title a:focus {
-  color: var(--wp--preset--color--agile-primary);  /* Agile primary on hover */
-}
-
-/* Date box (day + month) */
-#ect-minimal-list-wrp .style-2 .ect-event-date span {
-  color: var(--wp--preset--color--agile-vibrant);
-}
-
-/* If you want the date background to match your palette too: */
-#ect-minimal-list-wrp .style-2 .ect-event-date {
-  /* remove the plugin’s default color and use a subtle border */
-  background: transparent;
-  border: 1px solid rgba(0, 178, 233, 0.4); /* based on agile-vibrant */
-}
-
-/* ===== Footer contact info ===== */
 .site-footer .contact-info-box {
   display: flex;
   flex-direction: column;
@@ -557,13 +384,14 @@ body.single footer.entry-footer,
 }
 
 .site-footer .contact-icon {
-  width: 1.1rem;
+  width: 1.25rem;
   text-align: center;
   margin-top: 0.15rem;
 }
 
-.site-footer .contact-icon i {
+.site-footer .contact-icon i.fa {
   color: var(--wp--preset--color--agile-turq);
+  font-size: 1rem;
 }
 
 .site-footer .contact-value a {
@@ -576,7 +404,8 @@ body.single footer.entry-footer,
   text-decoration: underline;
 }
 
-/* ===== Footer menu ===== */
+/* Footer nav (if you add it later) */
+
 .site-footer__nav-container {
   text-align: center;
   margin-bottom: 0.5rem;
@@ -590,10 +419,6 @@ body.single footer.entry-footer,
   padding: 0;
 }
 
-.site-footer__nav li {
-  margin: 0;
-}
-
 .site-footer__nav a {
   color: #9ca3af;
   text-decoration: none;
@@ -604,133 +429,59 @@ body.single footer.entry-footer,
   color: var(--wp--preset--color--agile-vibrant);
 }
 
-/* Footer columns layout */
-.site-footer__columns {
-  display: flex;
-  flex-wrap: wrap;             /* allow stacking on very small screens */
-  gap: 2rem;                   /* space between columns */
-}
+/* Stack footer columns on small screens */
 
-/* Desktop: 3 columns */
-.site-footer__col {
-  flex: 1 1 0;                 /* all share available width */
-  min-width: 0;                /* avoid unexpected overflow */
-}
-
-/* If first column is too wide, cap it */
-.site-footer__col:first-child {
-  flex: 2 1 0;                 /* make column 1 wider but not full width */
-}
-
-/* Optional: make columns stack on narrow screens */
 @media (max-width: 768px) {
   .site-footer__col {
     flex: 1 1 100%;
   }
 }
 
-/* Footer contact icons (Font Awesome) */
-.site-footer .contact-icon i.fa {
-  font-size: 1rem;
-  line-height: 1;
+/* -------------------------------------------------------------------------- */
+/* EVENTS LIST (ECT)                                                          */
+/* -------------------------------------------------------------------------- */
+
+#ect-minimal-list-wrp .style-2 .ect-event-title a,
+#ect-minimal-list-wrp .style-2 .ect-event-title a:visited {
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.site-footer .contact-icon {
-  width: 1.25rem;
-  text-align: center;
-  margin-top: 0.15rem;
+#ect-minimal-list-wrp .style-2 .ect-event-title a:hover,
+#ect-minimal-list-wrp .style-2 .ect-event-title a:focus {
+  color: var(--wp--preset--color--agile-primary);
 }
 
-/* Contact page inline SVG icons */
-.page-id-1122 .entry-content svg[aria-hidden="true"] {
-  width: 1.25rem;
-  height: 1.25rem;
-  vertical-align: middle;
-  margin-right: 0.35rem;
-  fill: var(--wp--preset--color--agile-turq);
+#ect-minimal-list-wrp .style-2 .ect-event-date span {
+  color: var(--wp--preset--color--agile-vibrant);
 }
 
-/* Elementor social icon size (optional) */
-.elementor-widget-social-icons .elementor-icon.elementor-social-icon {
-  --icon-size: 22px;
+#ect-minimal-list-wrp .style-2 .ect-event-date {
+  background: transparent;
+  border: 1px solid rgba(0, 178, 233, 0.4);
 }
 
-/* === Agile611 Events List – corporate fonts + no price (GLOBAL) === */
+/* -------------------------------------------------------------------------- */
+/* MISC TWEAKS (optional, meta hiding, hero hiding, etc.)                     */
+/* -------------------------------------------------------------------------- */
 
-/* Use Agile611 heading font on event titles */
-#ect-events-list-content h2.ect-list-title,
-#ect-events-list-content h2.ect-list-title a.ect-event-url,
-.ect-clslist-event-info .ect-clslist-title a.ect-event-url,
-#ect-no-events p {
-  font-family: var(--wp--preset--font-family--heading), sans-serif !important;
+/* Hide main page title on standard pages (if you want pure landing feel) */
+body.page main .wp-block-post-title {
+  display: none;
 }
 
-/* Use Agile611 body font on descriptions, venue text, and rate area */
-#ect-events-list-content .ect-list-post-right .ect-list-description .ect-event-content,
-#ect-events-list-content .ect-list-post-right .ect-list-description .ect-event-content p,
-#ect-events-list-content .ect-list-venue .ect-icon,
-#ect-events-list-content .ect-list-venue .ect-venue-details,
-#ect-events-list-content .ect-list-venue .ect-venue-details a,
-#ect-events-list-content .ect-list-venue .ect-venue-details span,
-#ect-events-list-content .ect-rate-area {
-  font-family: var(--wp--preset--font-family--body), sans-serif !important;
-}
-
-/* Hide price block (icon + number) on ALL events lists */
-#ect-events-list-content .ect-rate-area {
+/* Hide "posted on" meta on single posts */
+body.single .entry-meta,
+body.single .post-meta,
+body.single .posted-on,
+body.single .wp-block-post-date,
+body.single .wp-block-post-author {
   display: none !important;
 }
 
-/* Hide hero only on single event pages */
-.single-tribe_events .site-hero {
-  display: none !important;
-}
-
-/* Keep page content images inside the main text column */
-.entry-content img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Center Gutenberg "aligncenter" figures and keep them in column */
-.entry-content .wp-block-image.aligncenter {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* If any heading contains an image (like your clientes image),
-   make sure it also respects the column width */
-.entry-content h2 img,
-.entry-content h3 img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Center the main content column on pages and single posts/events */
-.site-main .content-list {
-  max-width: 960px;        /* or 1100px, whatever width you want for the column */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Make sure inner content doesn’t stretch wider than this */
-.site-main .content-list .entry,
-.site-main .content-list .entry-content {
-  max-width: 100%;
-}
-
-/* Keep all content images inside the column */
-.site-main .entry-content img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Hide only the hero inner content, keep the band */
+/* Hide hero on some templates if you have a .site-hero band elsewhere */
 .page .site-hero__inner,
 .single .site-hero__inner,
 .archive .site-hero__inner {
   display: none !important;
 }
-
