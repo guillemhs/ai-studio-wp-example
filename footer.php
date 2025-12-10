@@ -10,7 +10,7 @@
     <div class="site-footer__columns">
       <!-- Column 1 -->
       <div class="site-footer__col">
-        <h3 style="font-size:2rem;margin:0 0 0.75rem;">Agile611</h3>
+        <h3 style="font-size:2rem;margin:0 0 0.75rem;"><img src="https://www.agile611.com/wp-content/uploads/2020/09/Negativo_Uso3-300x202.png"></h3>
         <p style="color:#9ca3af;margin:0;">
           Transformamos organizaciones potenciando su talento humano y asegurando su infraestructura tecnológica.
         </p>
