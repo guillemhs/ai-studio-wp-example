@@ -1208,3 +1208,37 @@ body.woocommerce.single-product .page-header h1.entry-title {
     row-gap: 2rem;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/* WooCommerce – Agile611 styling for Add to cart button                      */
+/* -------------------------------------------------------------------------- */
+
+/* Main "Añadir al carrito" button on single product */
+body.woocommerce.single-product .single_add_to_cart_button.button {
+  background: var(--wp--preset--color--agile-vibrant);  /* your main accent */
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.8rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.16);
+  cursor: pointer;
+  transition: all 0.18s ease-out;
+}
+
+/* Hover / focus state */
+body.woocommerce.single-product .single_add_to_cart_button.button:hover,
+body.woocommerce.single-product .single_add_to_cart_button.button:focus {
+  background: var(--wp--preset--color--agile-primary);  /* darker Agile blue */
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.22);
+}
+
+/* Remove WooCommerce outline color on focus for consistency */
+body.woocommerce.single-product .single_add_to_cart_button.button:focus-visible {
+  outline: 2px solid var(--wp--preset--color--agile-turq);
+  outline-offset: 3px;
+}
