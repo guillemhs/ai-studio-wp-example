@@ -1,8 +1,6 @@
 <?php
 /**
  * Single Event Template for The Events Calendar
- *
- * Lets TEC handle the inner markup, while we keep our header/footer.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,14 +13,14 @@ get_header();
 <main id="primary" class="site-main" role="main">
   <section class="content-list alignwide container mx-auto px-4">
     <?php
-    // Preferred: use TEC's own single event markup.
+    // Let The Events Calendar handle the markup.
     if ( function_exists( 'tribe_get_template_part' ) ) {
         tribe_get_template_part( 'single-event' );
     } elseif ( function_exists( 'tribe_get_view' ) ) {
-        // Fallback for some versions.
+        // Older versions fallback.
         tribe_get_view( 'single-event' );
     } else {
-        // Last-resort fallback if TEC functions are not available.
+        // Defensive fallback: normal loop.
         if ( have_posts() ) :
             while ( have_posts() ) : the_post(); ?>
                 <article <?php post_class( 'py-6 border-b border-gray-200' ); ?>>
@@ -32,9 +30,7 @@ get_header();
                   </div>
                 </article>
             <?php endwhile;
-        else : ?>
-            <p><?php esc_html_e( 'No hay eventos disponibles.', 'agile611' ); ?></p>
-        <?php endif;
+        endif;
     }
     ?>
   </section>
