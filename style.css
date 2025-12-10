@@ -728,3 +728,9 @@ body.single footer.entry-footer,
   height: auto;
   display: block;
 }
+
+/* Hide global hero band on pages and single posts */
+.page .site-hero,
+.single .site-hero {
+  display: none !important;
+}
