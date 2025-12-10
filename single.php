@@ -1,8 +1,8 @@
 <?php
 /**
- * Default page template.
+ * Single post template.
  *
- * Renders static pages like "Ciberseguridad".
+ * Used for blog posts and custom post types that do not have a dedicated template.
  */
 
 get_header();
@@ -24,9 +24,6 @@ get_header();
         the_post();
         ?>
 
-        <?php
-        // Page title – optional: remove this block if you truly never want titles
-        ?>
         <header class="page-header" style="margin-bottom:var(--wp--preset--spacing--40, 1.5rem);">
           <h1 class="wp-block-post-title entry-title">
             <?php the_title(); ?>
@@ -37,7 +34,6 @@ get_header();
           <?php
           the_content();
 
-          // Support for pagination within a page (<!--nextpage-->)
           wp_link_pages(
             array(
               'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'agile611' ),
@@ -52,7 +48,7 @@ get_header();
     else :
       ?>
 
-      <p><?php esc_html_e( 'No hay contenido disponible para esta página.', 'agile611' ); ?></p>
+      <p><?php esc_html_e( 'No hay contenido disponible.', 'agile611' ); ?></p>
 
     <?php endif; ?>
 
