@@ -156,44 +156,48 @@ get_header();
     </p>
     <!-- /wp:paragraph -->
 
-    <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":"2rem"}}} -->
-    <div class="wp-block-columns alignwide">
-      <!-- FOUR agile-card columns exactly as before -->
-      <!-- wp:column {"className":"agile-card"} -->
-      <div class="wp-block-column agile-card">
-        <!-- wp:heading {"level":3,"fontSize":"large"} -->
-         <a href="/formacion/" class="agile-card__link">
-        <h3 class="wp-block-heading has-large-font-size">Formación</h3>
-        <!-- /wp:heading -->
-        <!-- wp:paragraph -->
-        <p>Capacitación especializada para equipos de alto rendimiento.</p>
-        <!-- /wp:paragraph -->
-        </a>
-      </div>
-      <!-- /wp:column -->
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":"2rem"}}} -->
+<div class="wp-block-columns alignwide">
 
-      <div class="wp-block-column agile-card">
-        <a href="/consultoria/" class="agile-card__link">
-        <h3 class="wp-block-heading has-large-font-size">Consultoría</h3>
-        <p>Acompañamiento estratégico para la transformación ágil.</p>
-        </a>
-      </div>
+  <!-- wp:column {"className":"agile-card"} -->
+  <div class="wp-block-column agile-card">
+    <a href="/formacion/" class="agile-card__link">
+      <h3 class="wp-block-heading has-large-font-size">Formación</h3>
+      <p>Capacitación especializada para equipos de alto rendimiento.</p>
+    </a>
+  </div>
+  <!-- /wp:column -->
 
-      <div class="wp-block-column agile-card">
-        <a href="/ciberseguridad/" class="agile-card__link">
-        <h3 class="wp-block-heading has-large-font-size">Ciberseguridad</h3>
-        <p>Soluciones de ciberseguridad a medida y escalables.</p>
-        </a>
-      </div>
+  <!-- wp:column {"className":"agile-card"} -->
+  <div class="wp-block-column agile-card">
+    <a href="/consultoria/" class="agile-card__link">
+      <h3 class="wp-block-heading has-large-font-size">Consultoría</h3>
+      <p>Acompañamiento estratégico para la transformación ágil.</p>
+    </a>
+  </div>
+  <!-- /wp:column -->
 
-      <div class="wp-block-column agile-card">
-        <a href="/inteligencia-artificial/" class="agile-card__link">
-        <h3 class="wp-block-heading has-large-font-size">Inteligencia &amp; Artificial</h3>
-        <p>Integración de soluciones de inteligencia artificial de activos digitales.</p>
-        </a>
-      </div>
-    </div>
-    <!-- /wp:columns -->
+  <!-- wp:column {"className":"agile-card"} -->
+  <div class="wp-block-column agile-card">
+    <a href="/ciberseguridad/" class="agile-card__link">
+      <h3 class="wp-block-heading has-large-font-size">Ciberseguridad</h3>
+      <p>Soluciones de ciberseguridad a medida y escalables.</p>
+    </a>
+  </div>
+  <!-- /wp:column -->
+
+  <!-- wp:column {"className":"agile-card"} -->
+  <div class="wp-block-column agile-card">
+    <a href="/inteligencia-artificial/" class="agile-card__link">
+      <h3 class="wp-block-heading has-large-font-size">Inteligencia &amp; Artificial</h3>
+      <p>Integración de soluciones de inteligencia artificial de activos digitales.</p>
+    </a>
+  </div>
+  <!-- /wp:column -->
+
+</div>
+<!-- /wp:columns -->
+
   </div>
   <!-- /wp:group -->
 

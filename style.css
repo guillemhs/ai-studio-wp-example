@@ -536,3 +536,81 @@ body.single .wp-block-post-author {
   max-width: 100%;
   height: auto;
 }
+
+/* Base card look */
+.agile-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  padding: 2rem 1.75rem;
+  text-align: left;
+  display: flex;
+  height: 100%;
+}
+
+/* Make whole card clickable */
+.agile-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Smooth hover */
+.agile-card__link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
+  transition: all 0.18s ease-out;
+}
+
+/* Ensure hover effect applies to the card, not just text */
+.agile-card__link {
+  border-radius: 18px;
+}
+
+/* Typography inside cards */
+.agile-card h3.wp-block-heading {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
+  font-weight: 700;
+  word-break: keep-all;    /* help avoid ugly breaks */
+  hyphens: auto;
+}
+
+.agile-card p {
+  margin: 0;
+  color: #4b5563; /* subtle gray for text */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+/* 1st card (Formación) – corporate blue */
+.wp-block-columns.alignwide .agile-card:nth-child(1) h3 {
+  color: #0057ff; /* adjust to your exact brand blue */
+}
+
+/* 2nd, 3rd, 4th cards – corporate purple */
+.wp-block-columns.alignwide .agile-card:nth-child(2) h3,
+.wp-block-columns.alignwide .agile-card:nth-child(3) h3,
+.wp-block-columns.alignwide .agile-card:nth-child(4) h3 {
+  color: #6b21a8; /* adjust to your brand purple */
+}
+
+/* Prevent super-awkward breaks on medium/small screens */
+@media (max-width: 900px) {
+  .agile-card h3.has-large-font-size {
+    font-size: 1.35rem; /* slightly smaller */
+  }
+}
+
+/* On very small screens, let headings take full width and align left */
+@media (max-width: 600px) {
+  .wp-block-columns.alignwide {
+    gap: 1.25rem;
+  }
+
+  .agile-card {
+    text-align: left;
+  }
+}
