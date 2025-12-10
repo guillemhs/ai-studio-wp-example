@@ -112,10 +112,13 @@ get_header();
             <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
             <!-- /wp:spacer -->
 
-            <!-- Events shortcode -->
-            <!-- wp:shortcode -->
-            [events-calendar-templates category="all" template="default" style="style-1" date_format="default" start_date="" end_date="" limit="10" order="ASC" hide-venue="no" socialshare="no" time="future"]
-            <!-- /wp:shortcode -->
+                        <!-- Events shortcode (rendered via PHP) -->
+            <?php
+            echo do_shortcode(
+              '[events-calendar-templates category="all" template="default" style="style-1" date_format="default" start_date="" end_date="" limit="10" order="ASC" hide-venue="no" socialshare="no" time="future"]'
+            );
+            ?>
+
 
           </div>
           <!-- /wp:group -->
