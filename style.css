@@ -285,6 +285,17 @@ body.single main .alignwide {
   display: none;
 }
 
+/* Hide hamburger toggle by default (desktop & large screens) */
+.site-header__toggle {
+  display: none !important;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 @media (max-width: 768px) {
   /* ... other mobile header rules ... */
 
@@ -299,6 +310,32 @@ body.single main .alignwide {
     flex-direction: column;
     gap: 4px;
   }
+}
+
+@media (max-width: 768px) {
+
+  .site-header__toggle {
+    display: inline-flex !important;
+    visibility: visible;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .site-header__toggle-bar {
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 999px;
+    transition: transform 0.18s ease-out, opacity 0.18s ease-out;
+  }
+
 }
 
   /* Hamburger toggle button */
