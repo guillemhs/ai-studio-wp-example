@@ -463,3 +463,12 @@ body.single main time {
 .site-hero__tagline {
   display: none !important;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Page.php hero tweaks                                                       */
+/* -------------------------------------------------------------------------- */
+
+/* Hide the hero section that page.php prints on all standard pages */
+body.page .site-hero {
+  display: none !important;
+}
