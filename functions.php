@@ -61,3 +61,9 @@ function agile611_enqueue_icons() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'agile611_enqueue_icons' );
+
+function agile611_remove_ect_google_fonts() {
+    wp_dequeue_style( 'ect-google-font-css' );
+    wp_deregister_style( 'ect-google-font-css' );
+}
+add_action( 'wp_enqueue_scripts', 'agile611_remove_ect_google_fonts', 20 );

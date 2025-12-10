@@ -656,3 +656,29 @@ body.single footer.entry-footer,
 .elementor-widget-social-icons .elementor-icon.elementor-social-icon {
   --icon-size: 22px;
 }
+
+/* === Agile611 Events List – corporate fonts + no price (GLOBAL) === */
+
+/* Use Agile611 heading font on event titles */
+#ect-events-list-content h2.ect-list-title,
+#ect-events-list-content h2.ect-list-title a.ect-event-url,
+.ect-clslist-event-info .ect-clslist-title a.ect-event-url,
+#ect-no-events p {
+  font-family: var(--wp--preset--font-family--heading), sans-serif !important;
+}
+
+/* Use Agile611 body font on descriptions, venue text, and rate area */
+#ect-events-list-content .ect-list-post-right .ect-list-description .ect-event-content,
+#ect-events-list-content .ect-list-post-right .ect-list-description .ect-event-content p,
+#ect-events-list-content .ect-list-venue .ect-icon,
+#ect-events-list-content .ect-list-venue .ect-venue-details,
+#ect-events-list-content .ect-list-venue .ect-venue-details a,
+#ect-events-list-content .ect-list-venue .ect-venue-details span,
+#ect-events-list-content .ect-rate-area {
+  font-family: var(--wp--preset--font-family--body), sans-serif !important;
+}
+
+/* Hide price block (icon + number) on ALL events lists */
+#ect-events-list-content .ect-rate-area {
+  display: none !important;
+}
