@@ -486,11 +486,20 @@ body.page .entry-footer {
 /* Single post hero tweaks                                                    */
 /* -------------------------------------------------------------------------- */
 
-/* Remove the "Agile611" heading from the hero on single blog posts */
-body.single-post .site-hero__title {
-  display: none !important;
-}
+/* Remove the "Agile611" heading and tagline from the hero on single posts */
 body.single-post .site-hero__title,
 body.single-post .site-hero__tagline {
+  display: none !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Single post meta footer                                                    */
+/* -------------------------------------------------------------------------- */
+
+/* Hide the "Posted on …" footer line on all single blog posts */
+body.single-post footer.entry-footer,
+body.single footer.entry-footer,
+.single-post .entry-footer,
+.single .entry-footer {
   display: none !important;
 }
