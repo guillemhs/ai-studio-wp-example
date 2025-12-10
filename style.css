@@ -481,3 +481,16 @@ body.page .site-hero {
 body.page .entry-footer {
   display: none !important;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Single post hero tweaks                                                    */
+/* -------------------------------------------------------------------------- */
+
+/* Remove the "Agile611" heading from the hero on single blog posts */
+body.single-post .site-hero__title {
+  display: none !important;
+}
+body.single-post .site-hero__title,
+body.single-post .site-hero__tagline {
+  display: none !important;
+}
