@@ -47,8 +47,9 @@ get_header();
         <div class="wp-block-buttons">
           <!-- wp:button {"backgroundColor":"agile-vibrant","textColor":"white"} -->
           <div class="wp-block-button">
-            <a class="wp-block-button__link has-white-color has-agile-vibrant-background-color has-text-color has-background wp-element-button">
-              <a href="/servicios/">Nuestros Servicios →</a>
+            <a href="/servicios/"
+              class="wp-block-button__link has-white-color has-agile-vibrant-background-color has-text-color has-background wp-element-button">
+              Nuestros Servicios →
             </a>
           </div>
           <!-- /wp:button -->
@@ -161,27 +162,35 @@ get_header();
       <!-- wp:column {"className":"agile-card"} -->
       <div class="wp-block-column agile-card">
         <!-- wp:heading {"level":3,"fontSize":"large"} -->
+         <a href="/formacion/" class="agile-card__link">
         <h3 class="wp-block-heading has-large-font-size">Formación</h3>
         <!-- /wp:heading -->
         <!-- wp:paragraph -->
         <p>Capacitación especializada para equipos de alto rendimiento.</p>
         <!-- /wp:paragraph -->
+        </a>
       </div>
       <!-- /wp:column -->
 
       <div class="wp-block-column agile-card">
+        <a href="/consultoria/" class="agile-card__link">
         <h3 class="wp-block-heading has-large-font-size">Consultoría</h3>
         <p>Acompañamiento estratégico para la transformación ágil.</p>
+        </a>
       </div>
 
       <div class="wp-block-column agile-card">
-        <h3 class="wp-block-heading has-large-font-size">Software</h3>
-        <p>Soluciones tecnológicas a medida y escalables.</p>
+        <a href="/ciberseguridad/" class="agile-card__link">
+        <h3 class="wp-block-heading has-large-font-size">Ciberseguridad</h3>
+        <p>Soluciones de ciberseguridad a medida y escalables.</p>
+        </a>
       </div>
 
       <div class="wp-block-column agile-card">
-        <h3 class="wp-block-heading has-large-font-size">DevOps &amp; Sec</h3>
-        <p>Integración continua y protección de activos digitales.</p>
+        <a href="/inteligencia-artificial/" class="agile-card__link">
+        <h3 class="wp-block-heading has-large-font-size">Inteligencia &amp; Artificial</h3>
+        <p>Integración de soluciones de inteligencia artificial de activos digitales.</p>
+        </a>
       </div>
     </div>
     <!-- /wp:columns -->

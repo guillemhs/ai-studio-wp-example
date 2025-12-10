@@ -41,7 +41,7 @@
 
     <!-- Header button -->
     <div class="site-header__cta">
-      <a href="#contacto" class="wp-block-button__link has-white-color has-agile-vibrant-background-color has-text-color has-background wp-element-button">
+      <a href="/contacto/" class="wp-block-button__link has-white-color has-agile-vibrant-background-color has-text-color has-background wp-element-button">
         Empezar
       </a>
     </div>
