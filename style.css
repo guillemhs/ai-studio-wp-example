@@ -1131,3 +1131,148 @@ body.archive {
   color: #ffffff;
   border-color: var(--wp--preset--color--agile-deep, #111827);
 }
+
+/* -------------------------------------------------------------------------- */
+/* WooCommerce: Single product styling                                        */
+/* -------------------------------------------------------------------------- */
+
+body.woocommerce.single-product main.site-main {
+  padding-top: var(--wp--preset--spacing--60, 2.25rem);
+  padding-bottom: var(--wp--preset--spacing--80, 5rem);
+}
+
+/* Page title */
+body.woocommerce.single-product .page-header h1.entry-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--wp--preset--color--agile-deep);
+  margin-bottom: 0.5rem;
+}
+
+/* Woo container */
+body.woocommerce.single-product .woocommerce .single-product {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* Product gallery */
+body.woocommerce.single-product .woocommerce-product-gallery {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  padding: 1.5rem;
+}
+
+/* Summary column */
+body.woocommerce.single-product .summary.entry-summary {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  padding: 1.8rem 2rem;
+}
+
+/* Price */
+body.woocommerce.single-product .price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--wp--preset--color--agile-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Quantity + Add to cart */
+body.woocommerce.single-product .cart {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+body.woocommerce.single-product .cart .quantity .input-text.qty {
+  width: 80px;
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+}
+
+/* Make Add to cart button match Agile611 buttons */
+body.woocommerce.single-product .single_add_to_cart_button.button {
+  border-radius: 999px;
+  background: var(--wp--preset--color--agile-vibrant);
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  cursor: pointer;
+  transition: all 0.18s ease-out;
+}
+
+body.woocommerce.single-product .single_add_to_cart_button.button:hover {
+  background: var(--wp--preset--color--agile-primary);
+  transform: translateY(-1px);
+}
+
+/* Product meta (SKU, categories) */
+body.woocommerce.single-product .product_meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 1rem;
+}
+
+body.woocommerce.single-product .product_meta a {
+  color: var(--wp--preset--color--agile-primary);
+  text-decoration: none;
+}
+
+/* Related products */
+body.woocommerce.single-product .related.products {
+  margin-top: 3rem;
+}
+
+body.woocommerce.single-product .related.products > h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--wp--preset--color--agile-deep);
+  margin-bottom: 1rem;
+}
+
+/* Related product cards */
+body.woocommerce.single-product .related.products ul.products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+body.woocommerce.single-product .related.products ul.products li.product {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  padding: 1rem;
+  text-align: left;
+}
+
+body.woocommerce.single-product .related.products ul.products li.product h2.woocommerce-loop-product__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--wp--preset--color--agile-deep);
+  margin: 0.75rem 0 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  body.woocommerce.single-product .woocommerce .single-product {
+    grid-template-columns: 1fr;
+  }
+
+  body.woocommerce.single-product .related.products ul.products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  body.woocommerce.single-product .related.products ul.products {
+    grid-template-columns: 1fr;
+  }
+}
