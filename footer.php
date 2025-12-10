@@ -15,7 +15,13 @@
               style="max-width:160px;height:auto;">
         </h3>
           <p style="color:#9ca3af;margin:0;">
-          Transformamos organizaciones potenciando su talento humano y asegurando su infraestructura tecnológica.
+          Ayudamos a las personas y a las organizaciones a mejorar sus formas de trabajar, haciendo el lugar de trabajo más humano y eficiente.
+
+Somos una empresa dedicada al desarrollo de soluciones innovadoras que transforman las maneras de trabajar. Potenciamos el talento oculto en individuos y organizaciones mediante la integración de tecnologías avanzadas y metodologías ágiles. Diseñamos experiencias de formación, consultoría y acompañamiento que no solo enriquecen, sino que también maximizan el valor esperado por nuestros clientes.
+
+Implementamos soluciones de software personalizadas y prácticas de DevOps para optimizar procesos y acelerar la entrega de valor. Además, priorizamos la ciberseguridad, asegurando que todas nuestras soluciones cumplan con los más altos estándares de protección de datos.
+
+Nuestro objetivo es ser un referente en formación, innovación y calidad, liderando el camino hacia un futuro laboral más seguro y tecnológicamente avanzado.
         </p>
       </div>
 
