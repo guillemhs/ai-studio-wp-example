@@ -180,7 +180,7 @@ get_header();
   <!-- wp:column {"className":"agile-card"} -->
   <div class="wp-block-column agile-card">
     <a href="/ciberseguridad/" class="agile-card__link">
-      <h3 class="wp-block-heading has-large-font-size">Ciberseguridad</h3>
+      <h3 class="wp-block-heading has-large-font-size">Ciber&shy;seguridad</h3>
       <p>Soluciones de ciberseguridad a medida y escalables.</p>
     </a>
   </div>
