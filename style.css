@@ -280,6 +280,27 @@ body.single main .alignwide {
     grid-column: 3 / 4;
   }
 
+  /* Hamburger toggle: hidden by default (desktop) */
+.site-header__toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* ... other mobile header rules ... */
+
+  .site-header__toggle {
+    grid-column: 2 / 3;
+    justify-self: end;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    display: inline-flex;   /* <-- this makes it appear again on mobile */
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
   /* Hamburger toggle button */
   .site-header__toggle {
     grid-column: 2 / 3;
