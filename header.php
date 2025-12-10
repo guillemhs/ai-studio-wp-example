@@ -32,14 +32,15 @@
     </div>
 
     <!-- Mobile hamburger toggle (used on tablets/phones, hidden by CSS on desktop) -->
-    <button class="site-header__toggle" aria-expanded="false" aria-controls="primary-menu">
-      <span class="site-header__toggle-bar"></span>
-      <span class="site-header__toggle-bar"></span>
-      <span class="site-header__toggle-bar"></span>
-      <span class="screen-reader-text">
-        <?php esc_html_e( 'Abrir menú', 'agile611' ); ?>
-      </span>
-    </button>
+<button class="site-header__toggle" aria-expanded="false" aria-controls="primary-menu">
+  <span class="site-header__toggle-bar"></span>
+  <span class="site-header__toggle-bar"></span>
+  <span class="site-header__toggle-bar"></span>
+  <span class="screen-reader-text">
+    Abrir menú
+  </span>
+</button>
+
 
     <!-- Navigation (same as your former header) -->
     <nav class="agile611-main-nav" aria-label="<?php esc_attr_e( 'Primary Menu', 'agile611' ); ?>">
