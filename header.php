@@ -2,8 +2,7 @@
 /**
  * Header template
  *
- * Restores original Agile611 logo and "Empezar" button,
- * and adds responsive mobile menu toggle.
+ * @package Agile611
  */
 ?>
 <!doctype html>
@@ -17,21 +16,33 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="site-header alignfull has-agile-deep-background-color has-background">
+<header class="site-header">
   <div class="site-header__inner">
 
-    <!-- Logo (your original one) -->
+    <!-- Logo area -->
     <div class="site-header__logo">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="agile611-logo-link">
-        <img
-          src="https://www.agile611.com/wp-content/uploads/2020/09/cropped-logo-header.png"
-          alt="<?php bloginfo( 'name' ); ?>"
-          class="agile611-logo-img"
-        />
+        <?php
+        /**
+         * Prefer the WordPress "Custom Logo" (Appearance > Customize > Site Identity),
+         * but fall back to a static logo file if not set.
+         */
+        if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+          the_custom_logo();
+        } else {
+          ?>
+          <img
+            src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/agile611-logo.png' ); ?>"
+            class="agile611-logo-img"
+            alt="<?php bloginfo( 'name' ); ?>"
+          />
+          <?php
+        }
+        ?>
       </a>
     </div>
 
-    <!-- Mobile hamburger toggle (used on tablets/phones, hidden by CSS on desktop) -->
+    <!-- Mobile hamburger toggle -->
     <button class="site-header__toggle" aria-expanded="false" aria-controls="primary-menu">
       <span class="site-header__toggle-bar"></span>
       <span class="site-header__toggle-bar"></span>
@@ -41,75 +52,33 @@
       </span>
     </button>
 
-    <!-- Navigation (same as your former header) -->
-    <nav class="agile611-main-nav" aria-label="<?php esc_attr_e( 'Primary Menu', 'agile611' ); ?>">
+    <!-- Main navigation -->
+    <nav class="agile611-main-nav"
+         role="navigation"
+         aria-label="<?php esc_attr_e( 'Menú principal', 'agile611' ); ?>">
       <?php
       wp_nav_menu(
         array(
           'theme_location' => 'primary',
-          // keep your existing menu ID so it matches current menu assignment
-          'menu_id'        => 'primary-menu', // changed from "menu-menu_top_es" to work with aria-controls
           'container'      => '',
           'menu_class'     => 'agile611-main-nav__list',
-          'fallback_cb'    => false,
+          'menu_id'        => 'primary-menu', // referenced by aria-controls on the toggle
+          'fallback_cb'    => false,          // no default page list – keeps it clean
         )
       );
       ?>
     </nav>
 
-    <!-- Header button (your original "Empezar" link + classes) -->
+    <!-- Header CTA button -->
     <div class="site-header__cta">
-      <a href="/contacto/"
-         class="wp-block-button__link has-white-color has-agile-vibrant-background-color has-text-color has-background wp-element-button">
-        Empezar
+      <a class="wp-element-button" href="<?php echo esc_url( home_url( '/contacto/' ) ); ?>">
+        <?php esc_html_e( 'Empezar', 'agile611' ); ?>
       </a>
     </div>
 
-  </div>
+  </div><!-- .site-header__inner -->
 </header>
 
-<header class="site-header alignfull has-agile-deep-background-color has-background">
-  <div class="site-header__inner">
-
-    <!-- Logo -->
-    <div class="site-header__logo">…</div>
-
-    <!-- Mobile hamburger toggle -->
-    <button class="site-header__toggle" aria-expanded="false" aria-controls="primary-menu">
-      <span class="site-header__toggle-bar"></span>
-      <span class="site-header__toggle-bar"></span>
-      <span class="site-header__toggle-bar"></span>
-      <span class="screen-reader-text">Abrir menú</span>
-    </button>
-
-    <!-- Navigation -->
-    <nav class="agile611-main-nav" aria-label="<?php esc_attr_e( 'Primary Menu', 'agile611' ); ?>">
-      <?php
-      wp_nav_menu(
-        array(
-          'theme_location' => 'primary',
-          'menu_id'        => 'primary-menu',
-          'container'      => '',
-          'menu_class'     => 'agile611-main-nav__list',
-          'fallback_cb'    => false,
-        )
-      );
-      ?>
-    </nav>
-
-    <!-- Header CTA -->
-    <div class="site-header__cta">
-      <a href="/contacto/"
-         class="wp-block-button__link has-white-color has-agile-vibrant-background-color has-text-color has-background wp-element-button">
-        Empezar
-      </a>
-    </div>
-
-  </div>
-</header>
-
-
-<!-- Tiny JS to toggle the mobile menu -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.querySelector('.site-header__toggle');
