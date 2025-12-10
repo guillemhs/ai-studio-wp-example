@@ -105,3 +105,11 @@ function agile611_remove_ect_google_fonts() {
     wp_deregister_style( 'ect-google-font-css' );
 }
 add_action( 'wp_enqueue_scripts', 'agile611_remove_ect_google_fonts', 20 );
+
+// Nunito font
+wp_enqueue_style(
+    'agile611-google-fonts',
+    'https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap',
+    array(),
+    null
+);
