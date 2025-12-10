@@ -36,15 +36,24 @@
       </div>
 
       <!-- Column 2 -->
-      <div class="site-footer__col">
-        <h4 style="font-size:1.2rem;color:var(--wp--preset--color--agile-turq);margin:0 0 0.75rem;">Servicios</h4>
-        <ul>
-          <li>Formación Ágil</li>
-          <li>Consultoría</li>
-          <li>DevOps</li>
-          <li>Ciberseguridad</li>
-        </ul>
-      </div>
+<div class="site-footer__col">
+  <h4 style="font-size:1.2rem;color:var(--wp--preset--color--agile-turq);margin:0 0 0.75rem;">Servicios</h4>
+
+  <?php
+  // Footer services menu (menu-2)
+  if ( has_nav_menu( 'menu-2' ) ) {
+      wp_nav_menu( array(
+          'theme_location'  => 'menu-2',
+          'menu_id'         => 'footer-menu',
+          'menu_class'      => 'site-footer__services',
+          'container'       => 'nav',
+          'container_class' => 'site-footer__services-nav',
+          'depth'           => 1,
+      ) );
+  }
+  ?>
+</div>
+
 
       <!-- Column 3 – Contact info -->
       <div class="site-footer__col">
