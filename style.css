@@ -52,13 +52,34 @@ body {
 /* Layout tweaks                                                              */
 /* -------------------------------------------------------------------------- */
 
-/* Full-width sections in main: add side padding & keep wide content centered */
-main.site-main > .wp-block-group.alignfull {
+/* 1. Generic main container: horizontal padding on all pages */
+main.site-main,
+body.page main,
+body.single main {
   padding-left: var(--wp--preset--spacing--40, 2rem);
   padding-right: var(--wp--preset--spacing--40, 2rem);
 }
 
-main.site-main > .wp-block-group.alignfull .alignwide {
+/* 2. Inner groups / content: keep wide content centered */
+main.site-main > .wp-block-group.alignfull,
+body.page main > .wp-block-group.alignfull,
+body.single main > .wp-block-group.alignfull {
+  padding-left: 0;  /* avoid double padding */
+  padding-right: 0;
+}
+
+/* The inner .alignwide container should behave like your “wide” width */
+main.site-main .alignwide,
+body.page main .alignwide,
+body.single main .alignwide {
+  max-width: var(--wp--style--global--wide-size, 1200px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* As a fallback, constrain direct post content on pages too */
+body.page main .wp-block-post-content,
+body.single main .wp-block-post-content {
   max-width: var(--wp--style--global--wide-size, 1200px);
   margin-left: auto;
   margin-right: auto;
