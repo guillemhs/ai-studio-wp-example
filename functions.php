@@ -113,3 +113,13 @@ wp_enqueue_style(
     array(),
     null
 );
+
+function agile611_register_menus() {
+    register_nav_menus(
+        array(
+            'menu-1' => __( 'Primary Menu', 'agile611' ),
+            'menu-2' => __( 'Footer', 'agile611' ),
+        )
+    );
+}
+add_action( 'after_setup_theme', 'agile611_register_menus' );
