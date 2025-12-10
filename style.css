@@ -503,3 +503,12 @@ body.single footer.entry-footer,
 .single .entry-footer {
   display: none !important;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Header logo size                                                           */
+/* -------------------------------------------------------------------------- */
+
+.site-header .agile611-logo-img {
+  max-width: 160px;   /* same value as the footer logo */
+  height: auto;
+}
