@@ -134,19 +134,19 @@ main.site-main > .wp-block-group.alignfull .alignwide {
   display: none;
 }
 
-/* Show submenu on hover or keyboard focus */
+/* Show submenu on hover or keyboard focus (top level and nested) */
 .agile611-main-nav .menu-item-has-children:hover > .sub-menu,
 .agile611-main-nav .menu-item-has-children:focus-within > .sub-menu {
   display: block;
 }
 
-/* Keep current branch open (this is the "sticky open" behavior) */
+/* IMPORTANT: do NOT keep current branch open */
 .agile611-main-nav .current-menu-item > .sub-menu,
 .agile611-main-nav .current-menu-ancestor > .sub-menu,
 .agile611-main-nav .current-menu-parent > .sub-menu,
 .agile611-main-nav .current_page_ancestor > .sub-menu,
 .agile611-main-nav .current_page_parent > .sub-menu {
-  display: block;
+  display: none;   /* override any “always open” behavior */
 }
 
 /* Dropdown positioning */
@@ -173,7 +173,7 @@ main.site-main > .wp-block-group.alignfull .alignwide {
   font-weight: 500;
 }
 
-/* Nested fly-out */
+/* Nested fly-out: positioned to the right of its parent item */
 .agile611-main-nav .sub-menu .sub-menu {
   top: 0;
   left: 100%;
