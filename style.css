@@ -457,7 +457,7 @@ body.single main .alignwide {
 }
 
 #ect-minimal-list-wrp .style-2 .ect-event-date span {
-  color: var(--wp--preset--color--agile-vibrant);
+  color: var(-wp--preset--color--agile-turq);
 }
 
 #ect-minimal-list-wrp .style-2 .ect-event-date {
