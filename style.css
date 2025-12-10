@@ -472,3 +472,12 @@ body.single main time {
 body.page .site-hero {
   display: none !important;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Page.php meta footer tweaks                                                */
+/* -------------------------------------------------------------------------- */
+
+/* Hide "Posted on …" meta footer on all pages rendered by page.php */
+body.page .entry-footer {
+  display: none !important;
+}
