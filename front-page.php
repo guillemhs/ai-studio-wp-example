@@ -104,7 +104,7 @@ get_header();
             <!-- Command line -->
             <!-- wp:paragraph {"style":{"typography":{"fontFamily":"monospace","fontSize":"1rem","fontWeight":"600"}},"textColor":"agile-vibrant"} -->
             <p class="has-agile-vibrant-color has-text-color" style="font-family:monospace;font-size:1rem;font-weight:600">
-              <span style="color:#00B2E9">$</span> list --upcoming --events
+              <span style="color:#00B2E9">$ list --upcoming --events</span>
             </p>
             <!-- /wp:paragraph -->
 
