@@ -512,3 +512,31 @@ body.single footer.entry-footer,
   max-width: 160px;   /* same value as the footer logo */
   height: auto;
 }
+
+/* -------------------------------------------------------------- */
+/* Events list colors (ECT minimal list inside hero terminal)     */
+/* -------------------------------------------------------------- */
+
+/* Event title link */
+#ect-minimal-list-wrp .style-2 .ect-event-title a,
+#ect-minimal-list-wrp .style-2 .ect-event-title a:visited {
+  color: var(--wp--preset--color--agile-vibrant);  /* Agile vibrant */
+  text-decoration: none;
+}
+
+#ect-minimal-list-wrp .style-2 .ect-event-title a:hover,
+#ect-minimal-list-wrp .style-2 .ect-event-title a:focus {
+  color: var(--wp--preset--color--agile-primary);  /* Agile primary on hover */
+}
+
+/* Date box (day + month) */
+#ect-minimal-list-wrp .style-2 .ect-event-date span {
+  color: var(--wp--preset--color--agile-vibrant);
+}
+
+/* If you want the date background to match your palette too: */
+#ect-minimal-list-wrp .style-2 .ect-event-date {
+  /* remove the plugin’s default color and use a subtle border */
+  background: transparent;
+  border: 1px solid rgba(0, 178, 233, 0.4); /* based on agile-vibrant */
+}
