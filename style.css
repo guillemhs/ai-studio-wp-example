@@ -1333,3 +1333,35 @@ body.page-id-19180
     margin: 0 auto;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/* Hero section – full width on homepage                                      */
+/* -------------------------------------------------------------------------- */
+
+/* 1. Make the hero wrapper span the full viewport width */
+body.home main .wp-block-group.alignfull.has-background:first-of-type {
+  /* ensure it truly fills the screen */
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 2. Let the columns row inside the hero go full width too */
+body.home main .wp-block-group.alignfull.has-background:first-of-type
+  .wp-block-columns.alignwide {
+  max-width: 1200px;   /* increase or remove for 100% */
+  margin: 0 auto;
+}
+
+/* Optional: on very large screens, remove max-width for a *completely*
+   edge-to-edge hero (text + terminal). Comment out if you prefer it boxed */
+@media (min-width: 1440px) {
+  body.home main .wp-block-group.alignfull.has-background:first-of-type
+    .wp-block-columns.alignwide {
+    max-width: none;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+}
+
