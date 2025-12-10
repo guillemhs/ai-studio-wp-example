@@ -7,7 +7,9 @@
 
 get_header();
 ?>
-
+<div style="background:#ffbf00;padding:6px 10px;margin:10px 0;color:#000;font-weight:bold;">
+  TEMPLATE: single.php
+</div>
 <main id="primary" class="site-main wp-block-group alignfull"
       style="
         padding-top:var(--wp--preset--spacing--60, 2.25rem);
