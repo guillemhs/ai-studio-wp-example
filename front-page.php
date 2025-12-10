@@ -114,7 +114,7 @@ get_header();
 
             <!-- Events shortcode -->
             <!-- wp:shortcode -->
-            [ect_events_list limit="3" style="modern" date_format="d M" show_time="true" show_venue="false"]
+            [events-calendar-templates category="all" template="default" style="style-1" date_format="default" start_date="" end_date="" limit="10" order="ASC" hide-venue="no" socialshare="no" time="future"]
             <!-- /wp:shortcode -->
 
           </div>
