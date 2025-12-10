@@ -1302,3 +1302,8 @@ body.woocommerce-cart .woocommerce .button:focus-visible {
   font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif !important;
 }
+
+/* Events list (ECT) – hide price line for all events using this layout */
+#ect-events-list-content .ect-rate-area {
+  display: none !important;
+}
