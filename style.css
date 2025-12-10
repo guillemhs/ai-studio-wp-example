@@ -437,12 +437,20 @@ body.page.page-template-default main .wp-block-post-title {
 /* Post meta tweaks                                                           */
 /* -------------------------------------------------------------------------- */
 
-/* Hide "Posted on …" date line under posts */
-.entry-meta,
-.post-meta,
-.posted-on,
-.wp-block-post-date,
-.posted-on,
-.entry-date {
+/* Hide "Posted on …" date line under single posts only */
+body.single .entry-meta,
+body.single .post-meta,
+body.single .posted-on,
+body.single .wp-block-post-date,
+body.single .wp-block-post-author,
+body.single time.posted-on,
+body.single .wp-block-post-date time {
   display: none !important;
 }
+
+/* Optional, if it's still visible */
+/*
+body.single main time {
+  display: none !important;
+}
+*/
