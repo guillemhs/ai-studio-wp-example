@@ -118,6 +118,12 @@ get_header();
               '[events-calendar-templates category="all" template="minimal-list" style="style-2" date_format="default" start_date="" end_date="" limit="5" order="ASC" hide-venue="no" socialshare="no" time="future"]'
             );
             ?>
+            <p class="courses-link-wrapper" style="margin-top: 1.5rem;">
+  <a href="<?php echo esc_url( home_url( '/cursos-abiertos/' ) ); ?>">
+    Todos los cursos
+  </a>
+</p>
+
 
 
           </div>
