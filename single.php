@@ -1,24 +1,63 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<?php
+/**
+ * Default page template.
+ *
+ * Renders static pages like "Ciberseguridad".
+ */
 
-<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--80)">
-	<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}}} -->
-	<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--60)">
-		<!-- wp:post-title {"level":1,"style":{"typography":{"fontSize":"3rem"}}} /-->
-		<!-- wp:post-date {"textColor":"agile-primary","style":{"typography":{"fontStyle":"normal","fontWeight":"700"}}} /-->
-	</div>
-	<!-- /wp:group -->
+get_header();
+?>
 
-	<!-- wp:post-featured-image {"align":"wide","style":{"border":{"radius":"12px"}}} /-->
+<main id="primary" class="site-main wp-block-group alignfull"
+      style="
+        padding-top:var(--wp--preset--spacing--60, 2.25rem);
+        padding-bottom:var(--wp--preset--spacing--80, 5rem);
+        padding-left:var(--wp--preset--spacing--40, 2rem);
+        padding-right:var(--wp--preset--spacing--40, 2rem);
+      ">
 
-	<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
-    
-    <!-- wp:spacer {"height":"40px"} -->
-    <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
-    <!-- /wp:spacer -->
+  <div class="wp-block-group alignwide">
 
-    <!-- wp:comments /-->
-</main>
-<!-- /wp:group -->
+    <?php
+    if ( have_posts() ) :
+      while ( have_posts() ) :
+        the_post();
+        ?>
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+        <?php
+        // Page title – optional: remove this block if you truly never want titles
+        ?>
+        <header class="page-header" style="margin-bottom:var(--wp--preset--spacing--40, 1.5rem);">
+          <h1 class="wp-block-post-title entry-title">
+            <?php the_title(); ?>
+          </h1>
+        </header>
+
+        <div class="entry-content wp-block-post-content">
+          <?php
+          the_content();
+
+          // Support for pagination within a page (<!--nextpage-->)
+          wp_link_pages(
+            array(
+              'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'agile611' ),
+              'after'  => '</div>',
+            )
+          );
+          ?>
+        </div>
+
+        <?php
+      endwhile;
+    else :
+      ?>
+
+      <p><?php esc_html_e( 'No hay contenido disponible para esta página.', 'agile611' ); ?></p>
+
+    <?php endif; ?>
+
+  </div><!-- /.wp-block-group.alignwide -->
+</main><!-- /#primary -->
+
+<?php
+get_footer();
