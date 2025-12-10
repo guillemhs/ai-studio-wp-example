@@ -1242,3 +1242,45 @@ body.woocommerce.single-product .single_add_to_cart_button.button:focus-visible 
   outline: 2px solid var(--wp--preset--color--agile-turq);
   outline-offset: 3px;
 }
+
+/* -------------------------------------------------------------------------- */
+/* WooCommerce – Cart buttons in Agile611 colors                              */
+/* -------------------------------------------------------------------------- */
+
+/* All cart action buttons (apply coupon, update cart, etc.) */
+body.woocommerce-cart .woocommerce .button {
+  background: var(--wp--preset--color--agile-vibrant);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.4rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.16);
+  cursor: pointer;
+  transition: all 0.18s ease-out;
+}
+
+/* Primary / “alt” buttons – e.g. Finalizar compra */
+body.woocommerce-cart .woocommerce .button.alt,
+body.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+  background: var(--wp--preset--color--agile-vibrant);
+  color: #ffffff;
+}
+
+/* Hover / focus states */
+body.woocommerce-cart .woocommerce .button:hover,
+body.woocommerce-cart .woocommerce .button:focus {
+  background: var(--wp--preset--color--agile-primary);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.22);
+}
+
+/* Accessible focus outline */
+body.woocommerce-cart .woocommerce .button:focus-visible {
+  outline: 2px solid var(--wp--preset--color--agile-turq);
+  outline-offset: 3px;
+}
+/* -------------------------------------------------------------------------- */
