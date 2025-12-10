@@ -1365,13 +1365,4 @@ body.home main .wp-block-group.alignfull.has-background:first-of-type
   }
 }
 
-header.site-header {
-  background: transparent !important;
-}
-
-.site-header__logo {
-  background-color: var(--agile-deep-color); /* or your hex color */
-  display: inline-block;
-  padding: 0.5rem 1rem; /* adjust as needed */
-}
 
