@@ -137,3 +137,5 @@ add_filter( 'woocommerce_related_products_args', function( $args ) {
     $args['columns']        = 0;
     return $args;
 } );
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
