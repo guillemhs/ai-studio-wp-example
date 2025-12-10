@@ -512,3 +512,27 @@ body.single .wp-block-post-author {
 .single-tribe_events .text-sm.text-gray-500.mb-2 {
   display: none;
 }
+
+/* 1. Generic protection: images never overflow their container */
+.wp-block-image img,
+.wp-block-heading img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 2. Make centered figures respect the column width */
+.wp-block-image figure.aligncenter,
+.wp-block-image.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+/* 3. Headings with images (like your second H2) should also not overflow */
+.wp-block-heading.alignwide img,
+.wp-block-heading img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
