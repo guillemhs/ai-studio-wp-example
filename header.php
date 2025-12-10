@@ -19,15 +19,17 @@
 <header class="site-header">
   <div class="site-header__inner">
 
-    <!-- Logo -->
+    <!-- Logo area -->
     <div class="site-header__logo">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="agile611-logo-link">
         <?php
-        // If you use a custom logo in WP, prefer that:
+        /**
+         * Prefer the WordPress "Custom Logo" (Appearance > Customize > Site Identity),
+         * but fall back to a static logo file if not set.
+         */
         if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
           the_custom_logo();
         } else {
-          // Fallback image – change to your own logo path if needed
           ?>
           <img
             src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/agile611-logo.png' ); ?>"
@@ -51,21 +53,23 @@
     </button>
 
     <!-- Main navigation -->
-    <nav class="agile611-main-nav" role="navigation" aria-label="<?php esc_attr_e( 'Menú principal', 'agile611' ); ?>">
+    <nav class="agile611-main-nav"
+         role="navigation"
+         aria-label="<?php esc_attr_e( 'Menú principal', 'agile611' ); ?>">
       <?php
       wp_nav_menu(
         array(
           'theme_location' => 'primary',
           'container'      => '',
           'menu_class'     => 'agile611-main-nav__list',
-          'menu_id'        => 'primary-menu', // used by aria-controls on the toggle
-          'fallback_cb'    => false,
+          'menu_id'        => 'primary-menu', // referenced by aria-controls on the toggle
+          'fallback_cb'    => false,          // no default page list – keeps it clean
         )
       );
       ?>
     </nav>
 
-    <!-- Header CTA -->
+    <!-- Header CTA button -->
     <div class="site-header__cta">
       <a class="wp-element-button" href="<?php echo esc_url( home_url( '/contacto/' ) ); ?>">
         <?php esc_html_e( 'Empezar', 'agile611' ); ?>
@@ -75,9 +79,6 @@
   </div><!-- .site-header__inner -->
 </header>
 
-<?php
-// You can keep the JS here or move it to an enqueued file.
-?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.querySelector('.site-header__toggle');

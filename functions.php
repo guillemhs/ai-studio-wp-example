@@ -123,3 +123,10 @@ function agile611_register_menus() {
     );
 }
 add_action( 'after_setup_theme', 'agile611_register_menus' );
+
+add_theme_support( 'custom-logo', array(
+  'height'      => 80,
+  'width'       => 240,
+  'flex-height' => true,
+  'flex-width'  => true,
+) );
