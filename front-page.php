@@ -48,7 +48,7 @@ get_header();
           <!-- wp:button {"backgroundColor":"agile-vibrant","textColor":"white"} -->
           <div class="wp-block-button">
             <a class="wp-block-button__link has-white-color has-agile-vibrant-background-color has-text-color has-background wp-element-button">
-              Nuestros Servicios →
+              <a href="/servicios/">Nuestros Servicios →</a>
             </a>
           </div>
           <!-- /wp:button -->
