@@ -1383,3 +1383,9 @@ body.home main .wp-block-group.alignfull.has-background:first-of-type
 a:visited {
   color: #00B2E9 !important;
 }
+
+/* Show "Professional Scrum Master" caption in one horizontal line */
+.scrum-caption-horizontal figcaption.wp-element-caption {
+  white-space: nowrap;      /* prevent letters from wrapping vertically */
+  display: inline-block;    /* keep caption on a single horizontal line */
+}
