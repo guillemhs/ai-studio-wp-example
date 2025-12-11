@@ -142,9 +142,10 @@ get_header();
   <!-- /wp:group -->
 
   <!-- DOWNLOAD SECTION -->
-  <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"color":{"background":"#4CB8C9"}},"layout":{"type":"constrained"}} -->
-  <div class="wp-block-group alignfull has-background" style="background-color:#01003f;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
-    
+<!-- DOWNLOAD SECTION -->
+    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"color":{"background":"#4CB8C9"}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull has-background" style="background-color:#4CB8C9;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+
     <!-- Title -->
     <!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"3rem"}},"textColor":"white"} -->
     <h2 class="wp-block-heading has-text-align-center has-white-color has-text-color" style="font-size:3rem">
