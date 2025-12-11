@@ -141,14 +141,14 @@ get_header();
   </div>
   <!-- /wp:group -->
 
-    <!-- SERVICES SECTION -->
+  <!-- DOWNLOAD SECTION -->
   <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"color":{"background":"#01003f"}},"layout":{"type":"constrained"}} -->
-  <div class="wp-block-group alignfull has-background" style="background-color:#01003f;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+  <div class="wp-block-group alignfull has-background" style="background-color:4CB8C9;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
     
     <!-- Title -->
     <!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"3rem"}},"textColor":"white"} -->
     <h2 class="wp-block-heading has-text-align-center has-white-color has-text-color" style="font-size:3rem">
-      Soluciones Integrales
+      Recursos Gratuitos
     </h2>
     <!-- /wp:heading -->
 
@@ -186,41 +186,71 @@ get_header();
           <p>Soluciones de ciberseguridad a medida y escalables.</p>
         </a>
       </div>
-
-      <!-- 4 -->
-      <div class="wp-block-column agile-card">
-        <a href="/inteligencia-artificial/" class="agile-card__link">
-          <h3 class="wp-block-heading has-large-font-size">Inteligencia &amp; Artificial</h3>
-          <p>Integración de soluciones de inteligencia artificial de activos digitales.</p>
-        </a>
-      </div>
-
-      <!-- 5 NEW -->
-      <div class="wp-block-column agile-card">
-        <a href="/devops-cloud/" class="agile-card__link">
-          <h3 class="wp-block-heading has-large-font-size">DevOps &amp; Cloud</h3>
-          <p>Automatización, integración continua y servicios en la nube.</p>
-        </a>
-      </div>
-
-      <!-- 6 NEW -->
-      <div class="wp-block-column agile-card">
-        <a href="/agile-coaching/" class="agile-card__link">
-          <h3 class="wp-block-heading has-large-font-size">Agile Coaching</h3>
-          <p>Acompañamiento para escalar prácticas ágiles en tu organización.</p>
-        </a>
-      </div>
-
-      <!-- 7 NEW -->
-      <div class="wp-block-column agile-card">
-        <a href="/productos-digitales/" class="agile-card__link">
-          <h3 class="wp-block-heading has-large-font-size">Productos Digitales</h3>
-          <p>Diseño y evolución de productos digitales centrados en el usuario.</p>
-        </a>
-      </div>
-
     </div>
     <!-- /wp:columns -->
+
+  </div>
+  <!-- /wp:group -->
+
+
+
+
+  <!-- SERVICES SECTION -->
+  <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"color":{"background":"#F5F5F5"}},"layout":{"type":"constrained"}} -->
+  <div class="wp-block-group alignfull has-background" style="background-color:#F5F5F5;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+    <!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"3rem"}},"textColor":"agile-deep"} -->
+    <h2 class="wp-block-heading has-text-align-center has-agile-deep-color has-text-color" style="font-size:3rem">
+      Soluciones Integrales
+    </h2>
+    <!-- /wp:heading -->
+
+    <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.35rem"}},"textColor":"agile-text"} -->
+    <p class="has-text-align-center has-agile-text-color has-text-color" style="font-size:1.35rem">
+      Combinamos experiencia técnica y metodológica para impulsar el crecimiento.
+    </p>
+    <!-- /wp:paragraph -->
+
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":"2rem"}}} -->
+<div class="wp-block-columns alignwide">
+
+  <!-- wp:column {"className":"agile-card"} -->
+  <div class="wp-block-column agile-card">
+    <a href="/formacion/" class="agile-card__link">
+      <h3 class="wp-block-heading has-large-font-size">Formación</h3>
+      <p>Capacitación especializada para equipos de alto rendimiento.</p>
+    </a>
+  </div>
+  <!-- /wp:column -->
+
+  <!-- wp:column {"className":"agile-card"} -->
+  <div class="wp-block-column agile-card">
+    <a href="/consultoria/" class="agile-card__link">
+      <h3 class="wp-block-heading has-large-font-size">Consultoría</h3>
+      <p>Acompañamiento estratégico para la transformación ágil.</p>
+    </a>
+  </div>
+  <!-- /wp:column -->
+
+  <!-- wp:column {"className":"agile-card"} -->
+  <div class="wp-block-column agile-card">
+    <a href="/ciberseguridad/" class="agile-card__link">
+      <h3 class="wp-block-heading has-large-font-size">Ciber&shy;seguridad</h3>
+      <p>Soluciones de ciberseguridad a medida y escalables.</p>
+    </a>
+  </div>
+  <!-- /wp:column -->
+
+  <!-- wp:column {"className":"agile-card"} -->
+  <div class="wp-block-column agile-card">
+    <a href="/inteligencia-artificial/" class="agile-card__link">
+      <h3 class="wp-block-heading has-large-font-size">Inteligencia &amp; Artificial</h3>
+      <p>Integración de soluciones de inteligencia artificial de activos digitales.</p>
+    </a>
+  </div>
+  <!-- /wp:column -->
+
+</div>
+<!-- /wp:columns -->
 
   </div>
   <!-- /wp:group -->
