@@ -182,7 +182,7 @@ get_header();
       <div class="wp-block-column agile-card">
         <a href="/descarga-guia-scrum/" class="agile-card__link">
           <h3 class="wp-block-heading has-large-font-size">Descarga la Guía Scrum</h3>
-          <p>Obtiene la versió en español de la Guía Scrum.</p>
+          <p>Obtiene la versión en español de la Guía Scrum.</p>
         </a>
       </div>
     </div>
