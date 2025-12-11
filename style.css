@@ -1389,3 +1389,7 @@ a:visited {
   white-space: nowrap;      /* prevent letters from wrapping vertically */
   display: inline-block;    /* keep caption on a single horizontal line */
 }
+
+.scrum-caption-horizontal {
+  max-width: 100%;
+}
