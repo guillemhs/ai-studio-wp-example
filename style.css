@@ -1406,3 +1406,15 @@ figure .wp-element-caption,
 .wp-block-columns.is-layout-flex > .wp-block-column {
     min-width: 220px;
 }
+
+/* Footer services menu link color */
+.site-footer__services-nav a {
+    color: #9ca3af;
+}
+
+/* Optional: keep the same color on hover/focus/visited */
+.site-footer__services-nav a:hover,
+.site-footer__services-nav a:focus,
+.site-footer__services-nav a:visited {
+    color: #9ca3af;
+}
