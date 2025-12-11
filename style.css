@@ -1384,37 +1384,27 @@ a:visited {
   color: #00B2E9 !important;
 }
 
-/* Show "Professional Scrum Master" caption in one horizontal line */
-.scrum-caption-horizontal figcaption.wp-element-caption {
-  white-space: nowrap;      /* prevent letters from wrapping vertically */
-  display: inline-block;    /* keep caption on a single horizontal line */
-}
+/* Fix vertical captions caused by wp-element-caption */
+.wp-element-caption {
+  /* Make text behave like normal horizontal paragraph text */
+  display: block;              /* full-width block under the image */
+  white-space: normal;         /* wrap by words, not letters */
+  writing-mode: horizontal-tb; /* ensure horizontal text direction */
+  text-orientation: mixed;     /* avoid vertical-ideographic style */
 
-.scrum-caption-horizontal {
-  max-width: 100%;
-}
-
-/* Fix captions that appear with one letter per line */
-figure.wp-block-image figcaption,
-figcaption.wp-element-caption {
-  white-space: normal;   /* allow normal wrapping by words */
-  display: block;        /* full-width block under the image */
-  writing-mode: horizontal-tb; /* force horizontal text direction */
-}
-
-/* Safety override in case some style forces tiny width */
-figure.wp-block-image figcaption,
-figcaption.wp-element-caption {
-  max-width: 100% !important;
+  /* Just in case some theme CSS shrunk the box */
   width: auto !important;
+  max-width: 100% !important;
 }
 
-/* Make sure image columns aren't absurdly narrow */
-.wp-block-column {
-  min-width: 200px; /* adjust if needed */
+/* Optional: basic typography for captions */
+.wp-element-caption {
+  text-align: center;   /* or left/right if you prefer */
+  margin-top: 0.5em;
+  line-height: 1.4;
 }
 
-.wp-block-columns.is-layout-flex > .wp-block-column {
-  flex-grow: 1;
-  flex-basis: 0;
+figure .wp-element-caption {
+  writing-mode: horizontal-tb !important;
+  white-space: normal !important;
 }
