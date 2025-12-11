@@ -162,28 +162,27 @@ get_header();
     <!-- Cards -->
     <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":"2rem"}}} -->
     <div class="wp-block-columns alignwide">
-
       <!-- 1 -->
       <div class="wp-block-column agile-card">
         <a href="/formacion/" class="agile-card__link">
-          <h3 class="wp-block-heading has-large-font-size">Formación</h3>
-          <p>Capacitación especializada para equipos de alto rendimiento.</p>
+          <h3 class="wp-block-heading has-large-font-size">Simuladores de test</h3>
+          <p>Prepara tu certificación oficial de SAFe® y Scrum.org con nuestros simuladores.</p>
         </a>
       </div>
 
       <!-- 2 -->
       <div class="wp-block-column agile-card">
-        <a href="/consultoria/" class="agile-card__link">
-          <h3 class="wp-block-heading has-large-font-size">Consultoría</h3>
-          <p>Acompañamiento estratégico para la transformación ágil.</p>
+        <a href="/catalogo/" class="agile-card__link">
+          <h3 class="wp-block-heading has-large-font-size">Descarga nuestro catálogo formativo</h3>
+          <p>Conoce nuestra oferta formativa.</p>
         </a>
       </div>
 
       <!-- 3 -->
       <div class="wp-block-column agile-card">
-        <a href="/ciberseguridad/" class="agile-card__link">
-          <h3 class="wp-block-heading has-large-font-size">Ciber&shy;seguridad</h3>
-          <p>Soluciones de ciberseguridad a medida y escalables.</p>
+        <a href="/descarga-guia-scrum/" class="agile-card__link">
+          <h3 class="wp-block-heading has-large-font-size">Descarga la Guía Scrum</h3>
+          <p>Obtiene la versió en español de la Guía Scrum.</p>
         </a>
       </div>
     </div>
