@@ -155,7 +155,7 @@ get_header();
     <!-- Subtitle -->
     <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.35rem"}},"textColor":"gray-200"} -->
     <p class="has-text-align-center has-text-color" style="color:#e5e7eb;font-size:1.35rem">
-      Combinamos experiencia técnica y metodológica para impulsar el crecimiento.
+      Conocimiento experto para potenciar tu carrera, listo para descargar a coste cero.
     </p>
     <!-- /wp:paragraph -->
 
