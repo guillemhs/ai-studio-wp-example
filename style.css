@@ -1418,3 +1418,17 @@ figure .wp-element-caption,
 .site-footer__services-nav a:visited {
     color: #9ca3af;
 }
+
+/* Base color for the two special buttons */
+.wp-block-button__link[href="/servicios/"],
+.wp-block-button__link[href="/cursos-abiertos/"] {
+    background-color: #00B2E9;
+    border-color: #00B2E9;
+    color: #ffffff;          /* normal state text color */
+}
+
+/* Visited state only for those two buttons */
+.wp-block-button__link[href="/servicios/"]:visited,
+.wp-block-button__link[href="/contacto/"]:visited {
+    color: #000000;          /* black text when visited */
+}
