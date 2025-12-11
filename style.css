@@ -1384,27 +1384,25 @@ a:visited {
   color: #00B2E9 !important;
 }
 
-/* Fix vertical captions caused by wp-element-caption */
+/* 🔧 Fix vertical captions: make all .wp-element-caption horizontal */
+.wp-block-image .wp-element-caption,
+figure .wp-element-caption,
 .wp-element-caption {
-  /* Make text behave like normal horizontal paragraph text */
-  display: block;              /* full-width block under the image */
-  white-space: normal;         /* wrap by words, not letters */
-  writing-mode: horizontal-tb; /* ensure horizontal text direction */
-  text-orientation: mixed;     /* avoid vertical-ideographic style */
+    display: block !important;          /* normal block below the image */
+    white-space: normal !important;     /* wrap by words, not letters */
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
 
-  /* Just in case some theme CSS shrunk the box */
-  width: auto !important;
-  max-width: 100% !important;
+    width: auto !important;
+    max-width: 100% !important;
+
+    /* Optional styling */
+    text-align: center;
+    margin-top: 0.5em;
+    line-height: 1.4;
 }
 
-/* Optional: basic typography for captions */
-.wp-element-caption {
-  text-align: center;   /* or left/right if you prefer */
-  margin-top: 0.5em;
-  line-height: 1.4;
-}
-
-figure .wp-element-caption {
-  writing-mode: horizontal-tb !important;
-  white-space: normal !important;
+/* Make sure columns are wide enough so text doesn't get squeezed */
+.wp-block-columns.is-layout-flex > .wp-block-column {
+    min-width: 220px;
 }
