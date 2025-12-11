@@ -1393,3 +1393,28 @@ a:visited {
 .scrum-caption-horizontal {
   max-width: 100%;
 }
+
+/* Fix captions that appear with one letter per line */
+figure.wp-block-image figcaption,
+figcaption.wp-element-caption {
+  white-space: normal;   /* allow normal wrapping by words */
+  display: block;        /* full-width block under the image */
+  writing-mode: horizontal-tb; /* force horizontal text direction */
+}
+
+/* Safety override in case some style forces tiny width */
+figure.wp-block-image figcaption,
+figcaption.wp-element-caption {
+  max-width: 100% !important;
+  width: auto !important;
+}
+
+/* Make sure image columns aren't absurdly narrow */
+.wp-block-column {
+  min-width: 200px; /* adjust if needed */
+}
+
+.wp-block-columns.is-layout-flex > .wp-block-column {
+  flex-grow: 1;
+  flex-basis: 0;
+}
