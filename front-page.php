@@ -143,7 +143,7 @@ get_header();
 
   <!-- DOWNLOAD SECTION -->
 <!-- DOWNLOAD SECTION -->
-    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"color":{"background":"#4CB8C9"}},"layout":{"type":"constrained"}} -->
+    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"color":{"background":"#00B2E9"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignfull has-background" style="background-color:#4CB8C9;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
 
     <!-- Title -->
@@ -196,7 +196,7 @@ get_header();
 
 
   <!-- SERVICES SECTION -->
-  <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"color":{"background":"#F5F5F5"}},"layout":{"type":"constrained"}} -->
+  <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"color":{"background":"#4CB8C9"}},"layout":{"type":"constrained"}} -->
   <div class="wp-block-group alignfull has-background" style="background-color:#F5F5F5;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
     <!-- wp:heading {"textAlign":"center","level":2,"style":{"typography":{"fontSize":"3rem"}},"textColor":"agile-deep"} -->
     <h2 class="wp-block-heading has-text-align-center has-agile-deep-color has-text-color" style="font-size:3rem">
