@@ -46,12 +46,13 @@ get_header();
         <!-- wp:buttons -->
         <div class="wp-block-buttons">
           <!-- wp:button {"backgroundColor":"agile-vibrant","textColor":"white"} -->
-          <div class="wp-block-button">
-            <a href="/servicios/"
-              class="wp-block-button__link has-white-color has-agile-vibrant-background-color has-text-color has-background wp-element-button">
-              Nuestros Servicios →
-            </a>
-          </div>
+            <div class="wp-block-button">
+              <a href="/servicios/"
+               class="wp-block-button__link has-white-color has-text-color has-background wp-element-button"
+               style="background-color:#00B2E9;border-color:#00B2E9;">
+               Nuestros Servicios →
+              </a>
+            </div>
           <!-- /wp:button -->
         </div>
         <!-- /wp:buttons -->
