@@ -1433,6 +1433,23 @@ figure .wp-element-caption,
     color: #ffffff;          /* black text when visited */
 }
 
+/* Center all Gutenberg image blocks */
+.wp-block-image {
+    text-align: center;          /* center inline elements inside */
+}
+
+/* Make sure the figure itself is centered and not full‑width */
+.wp-block-image figure {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Prevent images from stretching beyond their natural width */
+.wp-block-image img {
+    display: inline-block;
+    height: auto;
+}
+
 /* Force all Gutenberg image alignments to center */
 .wp-block-image .alignleft,
 .wp-block-image .alignright,
