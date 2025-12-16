@@ -1432,3 +1432,13 @@ figure .wp-element-caption,
 .wp-block-button__link[href="/contacto/"]:visited {
     color: #ffffff;          /* black text when visited */
 }
+
+/* Force all Gutenberg image alignments to center */
+.wp-block-image .alignleft,
+.wp-block-image .alignright,
+.wp-block-image .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+}
