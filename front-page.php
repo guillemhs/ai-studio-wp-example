@@ -89,19 +89,20 @@ get_header();
               <span class="terminal-dot terminal-dot--green"></span>
             </div>
             <!-- /wp:html -->
-
-            <!-- RIGHT: path text -->
-            <!-- wp:paragraph {"style":{"typography":{"fontFamily":"monospace","fontSize":"0.875rem"}},"textColor":"gray-400"} -->
-            <p class="has-text-color" style="color:#00B2E9">
-              Cursos abiertos
-            </p>
-            <!-- /wp:paragraph -->
           </div>
           <!-- /wp:group -->
 
           <!-- Body of the terminal -->
           <!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem","left":"1.5rem","right":"1.5rem"}}},"layout":{"type":"default"}} -->
           <div class="wp-block-group" style="padding:1.5rem">
+
+            <!-- Command line -->
+            <!-- wp:paragraph {"style":{"typography":{"fontFamily":"monospace","fontSize":"1rem","fontWeight":"600"}},"textColor":"agile-vibrant"} -->
+            <p class="has-agile-vibrant-color has-text-color" style="font-family:monospace;font-size:1rem;font-weight:600">
+              <span style="color:#00B2E9">Cursos abiertos</span>
+            </p>
+            <!-- /wp:paragraph -->
+
             <!-- wp:spacer {"height":"20px"} -->
             <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
             <!-- /wp:spacer -->
