@@ -24,7 +24,7 @@
     <div class="site-header__logo">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="agile611-logo-link">
         <img
-          src="https://www.agile611.com/wp-content/uploads/2025/12/cq4MSRkbBToYUqB6TjDBrW.png"
+          src="https://www.agile611.com/wp-content/uploads/2020/09/cropped-logo-header.png"
           alt="<?php bloginfo( 'name' ); ?>"
           class="agile611-logo-img"
         />
