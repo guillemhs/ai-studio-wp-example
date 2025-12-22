@@ -208,16 +208,16 @@ add_action( 'wp', function () {
 });
 
 /**
- * Redirect to Cart when a product is added from a single event (tribe_events).
+ * Redirect to Cart after any WooCommerce add-to-cart on the frontend.
  */
 add_filter( 'woocommerce_add_to_cart_redirect', function( $url ) {
 
-    // Only on single The Events Calendar events
-    if ( is_singular( 'tribe_events' ) ) {
-        // Always redirect to the WooCommerce cart page
+    // Always redirect to the WooCommerce Cart page
+    if ( function_exists( 'wc_get_cart_url' ) ) {
         return wc_get_cart_url();
     }
 
-    // Default behavior for everything else
-    return $url;
+    // Fallback: hard-coded /cart if wc_get_cart_url doesn't exist
+    return home_url( '/cart/' );
 });
+
