@@ -1515,5 +1515,17 @@ button.single_add_to_cart_button.button.alt:hover {
   padding: 0.75rem 1rem;
 }
 
+/* Remove any border around the RSVP block on single event pages */
+.single-tribe_events .tribe-tickets__rsvp {
+  border: none !important;
+  box-shadow: none !important; /* just in case the “border” is a shadow */
+}
+
+.single-tribe_events .tribe-tickets__rsvp,
+.single-tribe_events .tribe-tickets__rsvp-details,
+.single-tribe_events .tribe-tickets__rsvp-actions {
+  border: none !important;
+  box-shadow: none !important;
+}
 
 /* -------------------------------------------------------------------------- */
