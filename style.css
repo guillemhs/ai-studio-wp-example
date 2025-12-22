@@ -1484,8 +1484,8 @@ button.single_add_to_cart_button.button.alt {
 
 /* Optional: change hover color too */
 button.single_add_to_cart_button.button.alt:hover {
-  background-color: #0056b3 !important; /* darker blue on hover */
-  border-color: #0056b3 !important;
+  background-color: #057EB5 !important; /* darker blue on hover */
+  border-color: #057EB5 !important;
   color: #ffffff !important;
 }
 
