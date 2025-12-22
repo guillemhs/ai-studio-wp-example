@@ -1489,4 +1489,14 @@ button.single_add_to_cart_button.button.alt:hover {
   color: #ffffff !important;
 }
 
+/* Ensure WooCommerce notices are visible */
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-notices-wrapper {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 /* -------------------------------------------------------------------------- */
