@@ -10,21 +10,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
+echo '<div style="background:#ffeb3b;padding:10px;text-align:center;">DEBUG: Using single-tribe_events.php</div>';
+
 ?>
 
 <?php
-// Show WooCommerce notices on this event page, if WooCommerce is active
-if ( function_exists( 'WC' ) && ( function_exists( 'woocommerce_output_all_notices' ) || function_exists( 'wc_print_notices' ) ) ) : ?>
-    <div class="woocommerce-notices-wrapper">
-        <?php
-        if ( function_exists( 'woocommerce_output_all_notices' ) ) {
-            woocommerce_output_all_notices();
-        } elseif ( function_exists( 'wc_print_notices' ) ) {
-            wc_print_notices();
-        }
-        ?>
-    </div>
-<?php endif; ?>
+// Show WooCommerce notices on this event page (no conditions, for now).
+?>
+<div class="woocommerce-notices-wrapper">
+    <?php
+    if ( function_exists( 'woocommerce_output_all_notices' ) ) {
+        woocommerce_output_all_notices();
+    } elseif ( function_exists( 'wc_print_notices' ) ) {
+        wc_print_notices();
+    } else {
+        // Debug text to confirm the template is being used
+        echo '<p style="color:red">WooCommerce notice functions not available.</p>';
+    }
+    ?>
+</div>
 
 <main id="primary" class="site-main" role="main">
   <section class="content-list alignwide container mx-auto px-4">
