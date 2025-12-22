@@ -1477,8 +1477,8 @@ figure .wp-element-caption,
 
 /* Target your "Añadir al carrito" button */
 button.single_add_to_cart_button.button.alt {
-  background-color: #007bff !important; /* blue */
-  border-color: #007bff !important;
+  background-color: #00B2E9 !important; /* blue */
+  border-color: #00B2E9 !important;
   color: #ffffff !important;
 }
 
