@@ -206,3 +206,18 @@ add_action( 'wp', function () {
 
     }, 5 ); // Priority 5 = near the top
 });
+
+/**
+ * Redirect to Cart when a product is added from a single event (tribe_events).
+ */
+add_filter( 'woocommerce_add_to_cart_redirect', function( $url ) {
+
+    // Only on single The Events Calendar events
+    if ( is_singular( 'tribe_events' ) ) {
+        // Always redirect to the WooCommerce cart page
+        return wc_get_cart_url();
+    }
+
+    // Default behavior for everything else
+    return $url;
+});
