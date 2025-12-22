@@ -139,3 +139,10 @@ add_filter( 'woocommerce_related_products_args', function( $args ) {
 } );
 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+// Ensure WooCommerce notices show on custom event pages
+add_action( 'wp', function() {
+    if ( is_singular( 'evento' ) ) { // adjust 'evento' to your event post type if different
+        add_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 5 );
+    }
+});
