@@ -12,6 +12,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
+<?php
+// Show WooCommerce notices (e.g. "Added to cart")
+if ( function_exists( 'woocommerce_output_all_notices' ) ) {
+    woocommerce_output_all_notices();
+} elseif ( function_exists( 'wc_print_notices' ) ) {
+    wc_print_notices();
+}
+?>
+
+
 <main id="primary" class="site-main" role="main">
   <section class="content-list alignwide container mx-auto px-4">
     <?php
