@@ -166,3 +166,43 @@ add_action( 'wp', function () {
         }
     }, 5 );
 });
+
+/**
+ * Show WooCommerce notices on The Events Calendar single event pages.
+ */
+add_action( 'wp', function () {
+    // Only continue if WooCommerce is active
+    if ( ! function_exists( 'WC' ) ) {
+        return;
+    }
+
+    // Only on single event pages (post type 'tribe_events')
+    if ( ! is_singular( 'tribe_events' ) ) {
+        return;
+    }
+
+    /**
+     * Hook into The Events Calendar single event view.
+     *
+     * This hook runs before the main single-event content.
+     * If your notices appear in a weird place, we can change the hook later.
+     */
+    add_action( 'tribe_events_single_event_before_the_content', function () {
+
+        // Debug marker: you should see this line on your event page
+        // the first time we test.
+        // Remove this echo once you confirm it shows.
+        echo '<div style="background:#ffeb3b;padding:8px 12px;text-align:center;font-weight:bold;">DEBUG: WooCommerce notices hook is running.</div>';
+
+        echo '<div class="woocommerce-notices-wrapper">';
+
+        if ( function_exists( 'woocommerce_output_all_notices' ) ) {
+            woocommerce_output_all_notices();
+        } elseif ( function_exists( 'wc_print_notices' ) ) {
+            wc_print_notices();
+        }
+
+        echo '</div>';
+
+    }, 5 ); // Priority 5 = near the top
+});
