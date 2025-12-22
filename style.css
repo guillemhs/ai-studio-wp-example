@@ -1459,3 +1459,19 @@ figure .wp-element-caption,
     margin-right: auto;
     float: none;
 }
+
+/* WooCommerce single product "Add to cart" button */
+.single_add_to_cart_button.button.alt {
+    background-color: #00B2E9;  /* corporate primary */
+    border-color: #00B2E9;
+    color: #ffffff;             /* text color */
+}
+
+/* Hover/focus state */
+.single_add_to_cart_button.button.alt:hover,
+.single_add_to_cart_button.button.alt:focus {
+    background-color: #057EB5;  /* slightly darker tone for hover */
+    border-color: #057EB5;
+    color: #ffffff;
+}
+/* -------------------------------------------------------------------------- */
