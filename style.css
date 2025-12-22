@@ -1499,4 +1499,21 @@ button.single_add_to_cart_button.button.alt:hover {
   opacity: 1 !important;
 }
 
+.single-tribe_events .woocommerce-notices-wrapper,
+.single-tribe_events .woocommerce-message,
+.single-tribe_events .woocommerce-error,
+.single-tribe_events .woocommerce-info {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 1rem 0 1.5rem;
+}
+
+.single-tribe_events .woocommerce-message {
+  border: 1px solid #46b450;
+  background-color: #f6fff6;
+  padding: 0.75rem 1rem;
+}
+
+
 /* -------------------------------------------------------------------------- */

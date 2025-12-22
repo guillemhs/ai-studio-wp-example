@@ -13,14 +13,18 @@ get_header();
 ?>
 
 <?php
-// Show WooCommerce notices (e.g. "Added to cart")
-if ( function_exists( 'woocommerce_output_all_notices' ) ) {
-    woocommerce_output_all_notices();
-} elseif ( function_exists( 'wc_print_notices' ) ) {
-    wc_print_notices();
-}
-?>
-
+// Show WooCommerce notices on this event page, if WooCommerce is active
+if ( function_exists( 'WC' ) && ( function_exists( 'woocommerce_output_all_notices' ) || function_exists( 'wc_print_notices' ) ) ) : ?>
+    <div class="woocommerce-notices-wrapper">
+        <?php
+        if ( function_exists( 'woocommerce_output_all_notices' ) ) {
+            woocommerce_output_all_notices();
+        } elseif ( function_exists( 'wc_print_notices' ) ) {
+            wc_print_notices();
+        }
+        ?>
+    </div>
+<?php endif; ?>
 
 <main id="primary" class="site-main" role="main">
   <section class="content-list alignwide container mx-auto px-4">

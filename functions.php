@@ -146,3 +146,23 @@ add_action( 'wp', function() {
         add_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 5 );
     }
 });
+
+add_action( 'wp', function () {
+    // Only on single tribe events
+    if ( ! function_exists( 'WC' ) || ! is_singular( 'tribe_events' ) ) {
+        return;
+    }
+
+    // Hook into the content area; adjust the hook if your theme uses a different one.
+    add_action( 'tribe_events_single_event_before_the_content', function () {
+        if ( function_exists( 'woocommerce_output_all_notices' ) ) {
+            echo '<div class="woocommerce-notices-wrapper">';
+            woocommerce_output_all_notices();
+            echo '</div>';
+        } elseif ( function_exists( 'wc_print_notices' ) ) {
+            echo '<div class="woocommerce-notices-wrapper">';
+            wc_print_notices();
+            echo '</div>';
+        }
+    }, 5 );
+});
