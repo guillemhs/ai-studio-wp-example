@@ -1474,4 +1474,19 @@ figure .wp-element-caption,
     border-color: #057EB5;
     color: #ffffff;
 }
+
+/* Target your "Añadir al carrito" button */
+button.single_add_to_cart_button.button.alt {
+  background-color: #007bff !important; /* blue */
+  border-color: #007bff !important;
+  color: #ffffff !important;
+}
+
+/* Optional: change hover color too */
+button.single_add_to_cart_button.button.alt:hover {
+  background-color: #0056b3 !important; /* darker blue on hover */
+  border-color: #0056b3 !important;
+  color: #ffffff !important;
+}
+
 /* -------------------------------------------------------------------------- */
